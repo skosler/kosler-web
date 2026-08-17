@@ -305,6 +305,7 @@ input,textarea,select{font-family:var(--f-body);font-size:.95rem;background:var(
 input:focus,textarea:focus,select:focus{outline:0;border-color:var(--orange)}
 textarea{resize:vertical;min-height:110px}
 .form-msg{font-size:.85rem;color:var(--amber);min-height:1em}
+.honeypot{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important}
 
 .closing{text-align:center;padding:clamp(70px,10vh,120px) 0}
 .closing .big{font-family:var(--f-display);font-size:clamp(1.8rem,4.2vw,3.1rem);line-height:1.14;
@@ -598,10 +599,12 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
       <h2 class="reveal" data-d="1">Conversemos sobre el futuro de la educación</h2>
       <p class="lead reveal" data-d="2">Si quieres conversar sobre inteligencia educativa, alianzas, conferencias, SEEDMAX, Rómpela PAES, 3Learn o proyectos de innovación educativa, puedes escribirme a través del formulario.</p>
     </div>
-    <form id="contact-form" class="reveal" data-d="2" novalidate>
+    <form id="contact-form" class="reveal" data-d="2" action="https://formspree.io/f/mqpzyedw" method="POST" novalidate>
+      <input type="hidden" name="_subject" value="Nuevo contacto desde kosler.cl" />
+      <div class="honeypot" aria-hidden="true"><label for="website">No completar</label><input id="website" name="_gotcha" type="text" tabindex="-1" autocomplete="off" /></div>
       <div class="field"><label for="n">Nombre</label><input id="n" name="nombre" type="text" required placeholder="Tu nombre" /></div>
       <div class="row2">
-        <div class="field"><label for="e">Correo</label><input id="e" name="correo" type="email" required placeholder="tucorreo@ejemplo.com" /></div>
+        <div class="field"><label for="e">Correo</label><input id="e" name="email" type="email" required placeholder="tucorreo@ejemplo.com" /></div>
         <div class="field"><label for="i">Institución / empresa</label><input id="i" name="institucion" type="text" placeholder="Opcional" /></div>
       </div>
       <div class="field"><label for="m">Motivo de contacto</label>
@@ -678,22 +681,36 @@ const io = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
 /* =========================================================
-   3. FORMULARIO — validación + fallback mailto (sin backend)
+   3. FORMULARIO — envío directo mediante Formspree
    ========================================================= */
 const form = document.getElementById('contact-form');
 const msg = document.getElementById('form-msg');
-form.addEventListener('submit', (ev) => {
+form.addEventListener('submit', async (ev) => {
   ev.preventDefault();
   const d = new FormData(form);
-  if (!d.get('nombre') || !d.get('correo') || !d.get('mensaje')) {
+  if (!d.get('nombre') || !d.get('email') || !d.get('mensaje')) {
     msg.textContent = 'Por favor completa nombre, correo y mensaje.';
     return;
   }
-  const body = `Nombre: ${d.get('nombre')}%0AInstitución: ${d.get('institucion')||'-'}%0AMotivo: ${d.get('motivo')}%0A%0A${d.get('mensaje')}`;
-  const subj = `Contacto kosler.cl — ${d.get('motivo')}`;
-  window.location.href = `mailto:contacto@kosler.cl?subject=${encodeURIComponent(subj)}&body=${body}`;
-  msg.textContent = 'Abriendo tu cliente de correo… si no se abre, escribe a contacto@kosler.cl';
-  form.reset();
+  const button = form.querySelector('button[type="submit"]');
+  button.disabled = true;
+  button.textContent = 'Enviando…';
+  msg.textContent = '';
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: d,
+      headers: { 'Accept': 'application/json' }
+    });
+    if (!response.ok) throw new Error('No se pudo enviar');
+    form.reset();
+    msg.textContent = 'Mensaje enviado correctamente. Me pondré en contacto contigo.';
+  } catch {
+    msg.textContent = 'No fue posible enviar el mensaje. Inténtalo nuevamente o escribe a contacto@kosler.cl';
+  } finally {
+    button.disabled = false;
+    button.innerHTML = 'Enviar mensaje <span class="arr">→</span>';
+  }
 });
 
 /* =========================================================
