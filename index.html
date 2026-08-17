@@ -339,13 +339,15 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
   .steps{grid-template-columns:1fr 1fr;gap:30px}.steps::before{display:none}
   .foot-grid{grid-template-columns:1fr 1fr}
 }
-@media(max-width:680px){
+@media(max-width:900px){
   .nav-links{position:fixed;inset:0 0 0 auto;width:min(80vw,320px);background:var(--navy-900);
     flex-direction:column;justify-content:center;gap:26px;padding:40px;transform:translateX(100%);
     transition:transform .4s var(--ease);border-left:1px solid var(--line);z-index:1001}
   .nav-links.open{transform:none}
   .nav-links a{font-size:1.05rem}
   .burger{display:flex;z-index:1002}
+}
+@media(max-width:680px){
   .cards-3,.dims,.posts,.mv,.row2,.steps{grid-template-columns:1fr}
   .foot-grid{grid-template-columns:1fr}
 }
@@ -364,10 +366,10 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
     <nav class="nav-links" id="menu">
       <a href="#inicio">Inicio</a>
       <a href="#sobre-mi">Sobre mí</a>
-      <a href="/3learn/">3Learn</a>
-      <a href="https://seedmax.cl" target="_blank" rel="noopener">SEEDMAX</a>
-      <a href="https://www.rompelapaes.cl/" target="_blank" rel="noopener">Rómpela PAES</a>
-      <a href="/neuva/">NeuVA</a>
+      <a href="#treslearn">3Learn</a>
+      <a href="#seedmax">SEEDMAX</a>
+      <a href="#rompela">Rómpela PAES</a>
+      <a href="/coaching-paes-ciencias-101/">Coaching 101</a>
       <a href="#insights">Insights</a>
       <a href="#conferencias">Conferencias</a>
       <a href="#contacto" class="nav-cta">Contacto</a>
@@ -386,9 +388,8 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
       <p class="intro reveal" data-d="2">Diseño modelos, plataformas y estrategias que transforman datos educativos en mejores decisiones de aprendizaje. Desde el Modelo 3Learn hasta SEEDMAX, Rómpela PAES y NeuVA, mi trabajo conecta pedagogía, IA, evaluación y personalización para construir una nueva generación de educación inteligente en Latinoamérica.</p>
       <div class="hero-cta reveal" data-d="3">
         <a href="#contacto" class="btn btn-primary">Conversemos <span class="arr">→</span></a>
-        <a href="https://seedmax.cl" target="_blank" rel="noopener" class="btn btn-ghost">Visitar SEEDMAX <span class="arr">↗</span></a>
-        <a href="/3learn/" class="btn btn-text">Explorar 3Learn <span class="arr">→</span></a>
-        <a href="/neuva/" class="btn btn-text">Conocer NeuVA <span class="arr">→</span></a>
+        <a href="#seedmax" class="btn btn-ghost">Conocer SEEDMAX</a>
+        <a href="#treslearn" class="btn btn-text">Explorar 3Learn <span class="arr">→</span></a>
       </div>
     </div>
     <aside class="hero-portrait reveal" data-d="2">
@@ -524,8 +525,9 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
       <article class="card reveal"><span class="ix">04</span><h3>NeuVA</h3><p>Acompañamiento inteligente para explicar errores y orientar el estudio, con criterio pedagógico y retroalimentación personalizada.</p></article>
     </div>
     <div style="margin-top:44px;display:flex;gap:14px;flex-wrap:wrap" class="reveal">
-      <a href="https://www.rompelapaes.cl/" target="_blank" rel="noopener" class="btn btn-primary">A Rómpela PAES <span class="arr">↗</span></a>
-      <a href="https://www.rompelapaes.cl/" target="_blank" rel="noopener" class="btn btn-ghost">Conocer el diagnóstico express</a>
+      <a href="https://rompelapaes.com" target="_blank" rel="noopener" class="btn btn-primary">Ir a rompelapaes.com <span class="arr">↗</span></a>
+      <a href="https://rompelapaes.com" target="_blank" rel="noopener" class="btn btn-ghost">Conocer el diagnóstico express</a>
+      <a href="/coaching-paes-ciencias-101/" class="btn btn-ghost">Coaching PAES Ciencias 101 <span class="arr">→</span></a>
     </div>
   </div>
 </section>
@@ -538,7 +540,6 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
       <h2 class="reveal" data-d="1">NeuVA: Neuro Virtual Assistant</h2>
       <p class="lead reveal" data-d="2">NeuVA es un asistente neuroeducativo virtual diseñado para acompañar procesos de aprendizaje, interpretar errores, orientar rutas de estudio y transformar datos educativos en decisiones accionables.</p>
       <p class="reveal" data-d="2" style="margin-top:18px">No se trata de una IA que solo responde preguntas. Su objetivo es acompañar el aprendizaje con criterio pedagógico, análisis de desempeño y retroalimentación personalizada.</p>
-      <div style="margin-top:34px" class="reveal" data-d="3"><a href="/neuva/" class="btn btn-primary">Conocer NeuVA <span class="arr">→</span></a></div>
     </div>
     <ul class="feature-list reveal" data-d="2">
       <li><span class="chk">▸</span> Explicación de errores específicos.</li>
@@ -595,12 +596,7 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
     <div>
       <span class="eyebrow reveal">09 / Contacto</span>
       <h2 class="reveal" data-d="1">Conversemos sobre el futuro de la educación</h2>
-      <p class="lead reveal" data-d="2">Si quieres conversar sobre inteligencia educativa, alianzas, conferencias, SEEDMAX, Rómpela PAES, 3Learn o proyectos de innovación educativa, puedes escribirme a través del formulario o contactarme directamente.</p>
-      <div class="hero-cta reveal" data-d="3" style="margin-top:30px">
-        <a href="mailto:sebastian@kosler.cl" class="btn btn-ghost">✉ sebastian@kosler.cl</a>
-        <a href="https://wa.me/56940078538" target="_blank" rel="noopener" class="btn btn-primary">WhatsApp <span class="arr">↗</span></a>
-        <a href="https://www.instagram.com/kosler.profe/" target="_blank" rel="noopener" class="btn btn-ghost">Instagram @kosler.profe <span class="arr">↗</span></a>
-      </div>
+      <p class="lead reveal" data-d="2">Si quieres conversar sobre inteligencia educativa, alianzas, conferencias, SEEDMAX, Rómpela PAES, 3Learn o proyectos de innovación educativa, puedes escribirme a través del formulario.</p>
     </div>
     <form id="contact-form" class="reveal" data-d="2" novalidate>
       <div class="field"><label for="n">Nombre</label><input id="n" name="nombre" type="text" required placeholder="Tu nombre" /></div>
@@ -612,7 +608,8 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
         <select id="m" name="motivo">
           <option>Conferencia o charla</option><option>Asesoría / consultoría</option>
           <option>Alianza estratégica</option><option>Prensa / entrevista</option>
-          <option>SEEDMAX</option><option>Rómpela PAES</option><option>Otro</option>
+          <option>SEEDMAX</option><option>Rómpela PAES</option>
+          <option>Coaching PAES Ciencias 101</option><option>Otro</option>
         </select>
       </div>
       <div class="field"><label for="ms">Mensaje</label><textarea id="ms" name="mensaje" required placeholder="Cuéntame brevemente en qué te puedo ayudar"></textarea></div>
@@ -636,17 +633,17 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
       <h5>Ecosistema</h5>
       <a href="https://seedmax.cl" target="_blank" rel="noopener">SEEDMAX ↗</a>
       <a href="/3learn/">Modelo 3Learn</a>
-      <a href="https://www.rompelapaes.cl/" target="_blank" rel="noopener">Rómpela PAES ↗</a>
-      <a href="/neuva/">NeuVA</a>
+      <a href="https://rompelapaes.com" target="_blank" rel="noopener">Rómpela PAES ↗</a>
+      <a href="/coaching-paes-ciencias-101/">Coaching PAES Ciencias 101</a>
+      <a href="#neuva">NeuVA</a>
     </div>
     <div class="foot-col">
       <h5>Conectar</h5>
       <!-- TODO: reemplazar por la URL real de tu perfil de LinkedIn -->
       <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn ↗</a>
-      <a href="/neuva/">NeuVA</a>
       <a href="#insights">Insights</a>
       <a href="mailto:charlas@kosler.cl">Charlas</a>
-      <a href="mailto:sebastian@kosler.cl">Contacto</a>
+      <a href="mailto:contacto@kosler.cl">Contacto</a>
     </div>
   </div>
   <div class="wrap foot-bottom">
@@ -694,8 +691,8 @@ form.addEventListener('submit', (ev) => {
   }
   const body = `Nombre: ${d.get('nombre')}%0AInstitución: ${d.get('institucion')||'-'}%0AMotivo: ${d.get('motivo')}%0A%0A${d.get('mensaje')}`;
   const subj = `Contacto kosler.cl — ${d.get('motivo')}`;
-  window.location.href = `mailto:sebastian@kosler.cl?subject=${encodeURIComponent(subj)}&body=${body}`;
-  msg.textContent = 'Abriendo tu cliente de correo… si no se abre, escribe a sebastian@kosler.cl';
+  window.location.href = `mailto:contacto@kosler.cl?subject=${encodeURIComponent(subj)}&body=${body}`;
+  msg.textContent = 'Abriendo tu cliente de correo… si no se abre, escribe a contacto@kosler.cl';
   form.reset();
 });
 
