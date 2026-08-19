@@ -1,5 +1,5 @@
-KOSLER.CL — MENÚ 100% INTERNO
-Versión: 2026-08-19 V11 — estructura plana para carga directa
+KOSLER.CL — MEJORAS PROFESIONALES + MENÚ 100% INTERNO
+Versión: 2026-08-19 V13 — estructura plana para carga directa
 
 Regla de navegación aplicada en todos los HTML:
 
@@ -28,3 +28,23 @@ Se conserva:
 - Formularios existentes.
 - Menú móvil sólido KOSLER_MENU_INLINE_V4_20260819.
 - Sin redirecciones para NeuVA.
+
+Mejoras V13:
+
+- En 3Learn se eliminó el correo directo contacto@kosler.cl del pie de página.
+- El contacto de 3Learn queda dirigido exclusivamente al formulario general /#contacto.
+
+Mejoras profesionales consolidadas:
+
+- Portada reorganizada con rutas por audiencia y llamados a la acción más claros.
+- Formación y trayectoria presentadas con mayor precisión.
+- Señales de experiencia profesional sin testimonios ni resultados inventados.
+- Hero visual reforzado en Modelo 3Learn y NeuVA.
+- Coaching PAES 101 con preguntas frecuentes, formulario más accesible y privacidad.
+- Motivo de contacto preseleccionado desde NeuVA, 3Learn e implementación institucional.
+- Menú Ecosistema que se cierra al seleccionar un enlace, hacer clic fuera o presionar Escape.
+- Política de privacidad y avisos junto a los formularios.
+- Artículos con fecha y datos estructurados Article; hub con CollectionPage.
+- robots.txt y sitemap.xml.
+- Animaciones canvas compatibles con reducción de movimiento y pausa en pestañas ocultas.
+- Limpieza de scripts transitorios de Cloudflare.

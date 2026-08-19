@@ -75,9 +75,15 @@ header.nav.scrolled{background:rgba(7,15,28,.78);backdrop-filter:blur(14px) satu
 .portrait::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(232,98,42,.07),transparent 45%,rgba(7,15,28,.74));pointer-events:none}.portrait::after{content:"20+ AÑOS · PAES CIENCIAS";position:absolute;z-index:2;bottom:25px;left:25px;font:600 .67rem var(--f-mono);letter-spacing:.15em;color:var(--amber)}
 .portrait img{width:100%;height:100%;object-fit:cover;object-position:center 18%;filter:saturate(.94) contrast(1.04)}
 .authority p{margin-top:20px}.final{text-align:center;background:var(--navy-900)}.final h2{margin-inline:auto;max-width:20ch}.final p{margin:25px auto 34px}.final small{display:block;color:var(--cream-faint);font-family:var(--f-mono);margin-top:18px}
+.faq{background:var(--navy-900)}.faq-list{max-width:850px;margin-top:46px;border-top:1px solid var(--line)}
+.faq-list details{border-bottom:1px solid var(--line);padding:22px 0}.faq-list summary{display:flex;justify-content:space-between;gap:24px;cursor:pointer;
+  list-style:none;font-family:var(--f-display);font-size:1.12rem;color:var(--cream)}.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::after{content:"+";color:var(--amber);font-family:var(--f-mono)}.faq-list details[open] summary::after{content:"−"}
+.faq-list details p{margin-top:14px;font-size:.95rem}
 .apply{max-width:760px;margin:52px auto 0;text-align:left;background:var(--navy-700);border:1px solid var(--line);border-radius:20px;padding:clamp(26px,4vw,42px);display:grid;gap:16px}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{display:grid;gap:8px}label{font:.65rem var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--cream-faint)}
 input,select,textarea{font:inherit;background:var(--navy-900);border:1px solid var(--line);border-radius:10px;padding:13px 15px;color:var(--cream)}textarea{min-height:105px;resize:vertical}.form-msg{font-size:.84rem;color:var(--amber)}.honeypot{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important}
+.privacy-note{font-size:.76rem;color:var(--cream-faint);line-height:1.5}.privacy-note a{color:var(--amber);text-decoration:underline;text-underline-offset:3px}
 footer{border-top:1px solid var(--line);background:var(--navy-900);padding:55px 0 35px}.foot{display:flex;align-items:flex-start;justify-content:space-between;gap:40px;flex-wrap:wrap}.foot p{font-size:.9rem;margin-top:12px}.foot-links{display:flex;gap:24px;flex-wrap:wrap}.foot-links a{color:var(--cream-dim);font-size:.88rem}.foot-links a:hover{color:var(--orange)}.copy{border-top:1px solid var(--line);margin-top:40px;padding-top:22px;font:.7rem var(--f-mono);color:var(--cream-faint)}
 .reveal{opacity:0;transform:translateY(26px);transition:.8s var(--ease)}.reveal.in{opacity:1;transform:none}
 @media(max-width:900px){.hero-grid,.intro-grid,.two-col,.includes,.method-head{grid-template-columns:1fr}.performance{max-width:580px}.steps{grid-template-columns:1fr 1fr}.authority .portrait{order:-1}}
@@ -270,7 +276,19 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:55px 
 
 <section class="section"><div class="wrap two-col authority">
   <div class="portrait reveal"><img src="/sebastian.webp" alt="Sebastián Kosler, coach PAES Ciencias" width="800" height="1000" loading="lazy" decoding="async"></div>
-  <div><span class="eyebrow reveal">Tu coach</span><h2 class="reveal">20 años preparando estudiantes para pruebas de Ciencias.</h2><p class="reveal">Soy Sebastián Kosler: Médico Veterinario, Profesor de Educación Media en Biología, Magíster en Innovación Curricular y Evaluación Educativa, docente universitario y profesor de Física, Química y Biología.</p><p class="reveal">Mi trabajo combina rigor científico, pedagogía, coaching académico, Modelo 3Learn y análisis de desempeño. No prometo atajos: construyo contigo un sistema capaz de transformar disciplina en resultados.</p></div>
+  <div><span class="eyebrow reveal">Tu coach</span><h2 class="reveal">20 años preparando estudiantes para pruebas de Ciencias.</h2><p class="reveal">Soy Sebastián Kosler: Médico Veterinario, Magíster en Innovación Curricular y Evaluación Educativa, docente universitario y profesor de Física, Química y Biología. Actualmente curso un Magíster en Neurociencias aplicadas a la Educación y realizo estudios doctorales en Educación.</p><p class="reveal">Mi trabajo combina rigor científico, pedagogía, coaching académico, Modelo 3Learn y análisis de desempeño. No prometo atajos: construyo contigo un sistema capaz de transformar disciplina en resultados.</p></div>
+</div></section>
+
+<section class="section faq" id="preguntas"><div class="wrap">
+  <span class="eyebrow reveal">Preguntas frecuentes</span>
+  <h2 class="reveal">Lo esencial antes de postular.</h2>
+  <div class="faq-list reveal">
+    <details><summary>¿El coaching es online o presencial?</summary><p>Puede desarrollarse online o presencialmente, según disponibilidad y coordinación. La modalidad se confirma antes de comenzar.</p></details>
+    <details><summary>¿Cuánto dura y con qué frecuencia se trabaja?</summary><p>La duración y frecuencia se definen después del diagnóstico, considerando tu punto de partida, meta, fecha de rendición y tiempo real disponible.</p></details>
+    <details><summary>¿Puedo trabajar Biología, Física o Química?</summary><p>Sí. El plan se ajusta a la ciencia o electivo que rindes y a las brechas que muestre tu diagnóstico.</p></details>
+    <details><summary>¿Qué ocurre después de postular?</summary><p>Se revisan personalmente tus antecedentes. Si existe un buen encaje, recibirás una propuesta de trabajo con modalidad, frecuencia, próximos pasos e inversión.</p></details>
+    <details><summary>¿La postulación me compromete a contratar?</summary><p>No. La postulación permite evaluar tu necesidad y aclarar las condiciones antes de tomar una decisión.</p></details>
+  </div>
 </div></section>
 
 <section class="section final" id="postular"><div class="wrap">
@@ -280,20 +298,21 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:55px 
   <form class="apply reveal" id="apply-form" action="https://formspree.io/f/mzepjdaq" method="POST" novalidate>
     <input type="hidden" name="_subject" value="Nueva postulación al Coaching PAES Ciencias 101" />
     <input type="hidden" name="origen" value="Página Coaching PAES Ciencias 101" />
-    <div class="honeypot" aria-hidden="true"><label for="empresa_web">No completar</label><input id="empresa_web" name="_gotcha" type="text" tabindex="-1" autocomplete="off" /></div>
-    <div class="row2"><div class="field"><label for="nombre">Nombre</label><input id="nombre" name="nombre" required placeholder="Tu nombre" /></div><div class="field"><label for="correo">Correo</label><input id="correo" name="email" type="email" required placeholder="tucorreo@ejemplo.com" /></div></div>
-    <div class="row2"><div class="field"><label for="actual">Puntaje actual</label><input id="actual" name="actual" placeholder="Ej. 550" /></div><div class="field"><label for="meta">Puntaje meta</label><input id="meta" name="meta" placeholder="Ej. 850" /></div></div>
+    <input class="honeypot" id="empresa_web" name="_gotcha" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" />
+    <div class="row2"><div class="field"><label for="nombre">Nombre</label><input id="nombre" name="nombre" required placeholder="Tu nombre" autocomplete="name" /></div><div class="field"><label for="correo">Correo</label><input id="correo" name="email" type="email" required placeholder="tucorreo@ejemplo.com" autocomplete="email" /></div></div>
+    <div class="row2"><div class="field"><label for="actual">Puntaje actual</label><input id="actual" name="actual" placeholder="Ej. 550" inputmode="numeric" /></div><div class="field"><label for="meta">Puntaje meta</label><input id="meta" name="meta" placeholder="Ej. 850" inputmode="numeric" /></div></div>
     <div class="field"><label for="ciencia">Ciencia / electivo</label><select id="ciencia" name="ciencia"><option>Biología</option><option>Química</option><option>Física</option><option>Aún no lo decido</option></select></div>
     <div class="field"><label for="mensaje">Cuéntame brevemente tu situación</label><textarea id="mensaje" name="mensaje" required placeholder="Qué has estudiado, qué te cuesta y cuándo rindes la PAES"></textarea></div>
     <button class="btn btn-primary" type="submit" style="justify-content:center">Postular al Coaching 101 →</button><span class="form-msg" id="form-msg" role="status"></span>
+    <p class="privacy-note">Al enviar esta postulación aceptas que usemos tus datos para evaluar y responder tu solicitud. Revisa la <a href="/privacidad">política de privacidad</a>.</p>
   </form>
   <small>RESPUESTA PERSONAL · SIN COMPROMISO · ONLINE O PRESENCIAL</small>
 </div></section>
 </main>
 
-<footer><div class="wrap"><div class="foot"><div><a href="/" class="brand"><span class="dot"></span>Sebastián Kosler</a><p>Coaching PAES Ciencias 101 · Formando atletas cognitivos.</p></div><div class="foot-links"><a href="/">kosler.cl</a><a href="/#rompela">Rómpela PAES</a><a href="/#contacto">Contacto</a></div></div><div class="copy">© 2026 Sebastián Kosler · Coaching PAES Ciencias 101</div></div></footer>
+<footer><div class="wrap"><div class="foot"><div><a href="/" class="brand"><span class="dot"></span>Sebastián Kosler</a><p>Coaching PAES Ciencias 101 · Formando atletas cognitivos.</p></div><div class="foot-links"><a href="/">kosler.cl</a><a href="/#rompela">Rómpela PAES</a><a href="/#contacto">Contacto</a><a href="/privacidad">Privacidad</a></div></div><div class="copy">© 2026 Sebastián Kosler · Coaching PAES Ciencias 101</div></div></footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 const nav=document.getElementById('nav'),burger=document.getElementById('burger'),menu=document.getElementById('menu');
 addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40),{passive:true});
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -7% 0px'});
@@ -304,11 +323,13 @@ const button=form.querySelector('button[type="submit"]');button.disabled=true;bu
 try{const response=await fetch(form.action,{method:'POST',body:d,headers:{'Accept':'application/json'}});if(!response.ok)throw new Error('No se pudo enviar');form.reset();msg.textContent='Postulación enviada correctamente. Revisaré personalmente tus antecedentes y me pondré en contacto contigo.'}
 catch{msg.textContent='No fue posible enviar tu postulación. Inténtalo nuevamente o escribe a contacto@kosler.cl'}
 finally{button.disabled=false;button.textContent='Postular al Coaching 101 →'}});
-(function(){const c=document.getElementById('neural'),x=c.getContext('2d');let w,h,n=[],d=Math.min(devicePixelRatio||1,2);const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+(function(){const c=document.getElementById('neural'),x=c.getContext('2d');let w,h,n=[],d=Math.min(devicePixelRatio||1,2),raf=0,running=false;const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 function resize(){w=c.clientWidth;h=c.clientHeight;c.width=w*d;c.height=h*d;x.setTransform(d,0,0,d,0,0);n=Array.from({length:Math.min(Math.floor(w*h/15000),100)},()=>({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25,r:Math.random()*1.5+.6,hot:Math.random()<.14}))}
-function draw(){x.clearRect(0,0,w,h);n.forEach((a,i)=>{if(!reduce){a.x+=a.vx;a.y+=a.vy}if(a.x<0||a.x>w)a.vx*=-1;if(a.y<0||a.y>h)a.vy*=-1;n.slice(i+1).forEach(b=>{const dx=a.x-b.x,dy=a.y-b.y,dist=Math.hypot(dx,dy);if(dist<120){const al=(1-dist/120)*.38;x.strokeStyle=(a.hot||b.hot)?`rgba(242,153,74,${al})`:`rgba(126,133,151,${al*.55})`;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke()}});x.beginPath();x.arc(a.x,a.y,a.r,0,Math.PI*2);x.fillStyle=a.hot?'rgba(232,98,42,.9)':'rgba(185,182,174,.5)';x.fill()});requestAnimationFrame(draw)}addEventListener('resize',resize,{passive:true});resize();draw()})();
+function draw(){x.clearRect(0,0,w,h);n.forEach((a,i)=>{if(!reduce){a.x+=a.vx;a.y+=a.vy}if(a.x<0||a.x>w)a.vx*=-1;if(a.y<0||a.y>h)a.vy*=-1;n.slice(i+1).forEach(b=>{const dx=a.x-b.x,dy=a.y-b.y,dist=Math.hypot(dx,dy);if(dist<120){const al=(1-dist/120)*.38;x.strokeStyle=(a.hot||b.hot)?`rgba(242,153,74,${al})`:`rgba(126,133,151,${al*.55})`;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke()}});x.beginPath();x.arc(a.x,a.y,a.r,0,Math.PI*2);x.fillStyle=a.hot?'rgba(232,98,42,.9)':'rgba(185,182,174,.5)';x.fill()})}
+function step(){if(!running)return;draw();raf=requestAnimationFrame(step)}function start(){if(reduce){draw();return}if(!running){running=true;step()}}function stop(){running=false;cancelAnimationFrame(raf)}
+addEventListener('resize',()=>{resize();if(reduce)draw()},{passive:true});document.addEventListener('visibilitychange',()=>document.hidden?stop():start());resize();start()})();
 </script>
-<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a2d11864fa2ec3c0',t:'MTc4NzA1Nzk2MQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script id="kosler-mobile-menu-inline-js">
+<script id="kosler-mobile-menu-inline-js">
 (function(){
   'use strict';
 
@@ -350,15 +371,27 @@ function draw(){x.clearRect(0,0,w,h);n.forEach((a,i)=>{if(!reduce){a.x+=a.vx;a.y
       if(!open&&restoreFocus)burger.focus();
     }
 
+    function closeDetails(){
+      menu.querySelectorAll('details[open]').forEach(function(details){
+        details.removeAttribute('open');
+      });
+    }
+
     burger.addEventListener('click',function(){
       setOpen(!menu.classList.contains('open'),false);
     });
     backdrop.addEventListener('click',function(){setOpen(false,true)});
     menu.querySelectorAll('a').forEach(function(link){
-      link.addEventListener('click',function(){setOpen(false,false)});
+      link.addEventListener('click',function(){closeDetails();setOpen(false,false)});
+    });
+    document.addEventListener('click',function(event){
+      if(!header.contains(event.target))closeDetails();
     });
     document.addEventListener('keydown',function(event){
-      if(event.key==='Escape'&&menu.classList.contains('open'))setOpen(false,true);
+      if(event.key==='Escape'){
+        closeDetails();
+        if(menu.classList.contains('open'))setOpen(false,true);
+      }
     });
     window.addEventListener('resize',function(){
       if(window.innerWidth>900&&menu.classList.contains('open'))setOpen(false,false);

@@ -152,13 +152,25 @@ header.nav.scrolled{
 .hero::after{
   content:"";position:absolute;z-index:1;width:44vw;height:44vw;left:-14vw;bottom:-16vw;
   background:radial-gradient(circle,rgba(242,153,74,.10),transparent 60%);pointer-events:none}
-.hero-inner{position:relative;z-index:2;width:100%}
+.hero-inner{position:relative;z-index:2;width:100%;display:grid;grid-template-columns:1.06fr .94fr;
+  gap:clamp(42px,6vw,88px);align-items:center}
 .hero h1{font-size:clamp(2.9rem,7vw,5.6rem);font-weight:620;letter-spacing:-.038em;line-height:.98}
 .hero h1 span{color:var(--amber)}
 .hero .sub{font-family:var(--f-accent);font-size:clamp(.92rem,1.6vw,1.12rem);
   color:var(--amber);letter-spacing:.005em;margin:26px 0 22px;font-weight:600}
 .hero .intro{font-size:clamp(1rem,1.4vw,1.18rem);color:var(--cream-dim);max-width:58ch}
 .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px}
+.hero-visual{border:1px solid rgba(242,153,74,.3);border-radius:24px;padding:clamp(24px,3vw,36px);
+  background:linear-gradient(155deg,rgba(22,41,74,.95),rgba(11,22,40,.92));box-shadow:0 30px 80px -34px #000}
+.hero-visual .visual-label{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cream-faint)}
+.signal{display:grid;grid-template-columns:34px 1fr auto;gap:14px;align-items:center;margin-top:15px;padding:16px;
+  border:1px solid var(--line);border-radius:14px;background:rgba(7,15,28,.55)}
+.signal .num{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-accent);font-weight:800;
+  font-size:.76rem;color:var(--amber);background:var(--amber-soft)}
+.signal strong{font-family:var(--f-display);font-weight:560;color:var(--cream);font-size:1rem}
+.signal .arrow{color:var(--orange);font-family:var(--f-mono)}
+.hero-result{margin-top:20px;padding:18px;border-radius:14px;background:linear-gradient(90deg,rgba(232,98,42,.18),rgba(242,153,74,.08));
+  color:var(--cream);font-family:var(--f-accent);font-size:.82rem;font-weight:700;text-align:center}
 
 /* =================== CARDS =================== */
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(34px,5vw,64px);align-items:center}
@@ -240,7 +252,8 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
 
 /* =================== RESPONSIVE =================== */
 @media(max-width:1000px){
-  .grid-2{grid-template-columns:1fr}
+  .hero-inner,.grid-2{grid-template-columns:1fr}
+  .hero-visual{max-width:640px}
   .cards-3{grid-template-columns:1fr 1fr}
   .steps{grid-template-columns:1fr 1fr;gap:30px}.steps::before{display:none}
   .foot-grid{grid-template-columns:1fr 1fr}
@@ -399,13 +412,23 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
 <!-- ===================== HERO ===================== -->
 <section class="hero" id="inicio">
   <div class="wrap hero-inner">
-    <h1 class="reveal"><span>NeuVA</span></h1>
-    <p class="sub reveal" data-d="1">Neuro Virtual Assistant · IA educativa con criterio pedagógico</p>
-    <p class="intro reveal" data-d="2">Un asistente neuroeducativo diseñado para interpretar errores, detectar brechas y transformar datos de aprendizaje en explicaciones, recomendaciones y rutas de avance personalizadas.</p>
-    <div class="hero-cta reveal" data-d="3">
-      <a href="#como-funciona" class="btn btn-primary">Descubrir cómo funciona <span class="arr">→</span></a>
-      <a href="/#contacto" class="btn btn-ghost">Conversar sobre NeuVA</a>
+    <div class="hero-copy">
+      <h1 class="reveal"><span>NeuVA</span></h1>
+      <p class="sub reveal" data-d="1">Neuro Virtual Assistant · IA educativa con criterio pedagógico</p>
+      <p class="intro reveal" data-d="2">Un asistente neuroeducativo diseñado para interpretar errores, detectar brechas y transformar datos de aprendizaje en explicaciones, recomendaciones y rutas de avance personalizadas.</p>
+      <div class="hero-cta reveal" data-d="3">
+        <a href="#como-funciona" class="btn btn-primary">Descubrir cómo funciona <span class="arr">→</span></a>
+        <a href="/?motivo=NeuVA#contacto" class="btn btn-ghost">Conversar sobre NeuVA</a>
+      </div>
     </div>
+    <aside class="hero-visual reveal" data-d="2" aria-label="Flujo de interpretación de NeuVA">
+      <span class="visual-label">Del dato a la decisión</span>
+      <div class="signal"><span class="num">01</span><strong>Recoge evidencia</strong><span class="arrow">→</span></div>
+      <div class="signal"><span class="num">02</span><strong>Clasifica el error</strong><span class="arrow">→</span></div>
+      <div class="signal"><span class="num">03</span><strong>Interpreta patrones</strong><span class="arrow">→</span></div>
+      <div class="signal"><span class="num">04</span><strong>Prioriza una ruta</strong><span class="arrow">✓</span></div>
+      <div class="hero-result">Retroalimentación comprensible y una próxima acción concreta</div>
+    </aside>
   </div>
 </section>
 
@@ -501,7 +524,7 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
     <p class="big reveal" data-d="1">NeuVA se encuentra en desarrollo y validación progresiva. Su evolución combina <b>evidencia pedagógica, datos reales y mejora responsable</b>, sin reemplazar el criterio profesional docente.</p>
     <div class="cta-row reveal" data-d="2">
       <a href="https://rompelapaes.cl/" target="_blank" rel="noopener" class="btn btn-primary">Conocer Rómpela PAES <span class="arr">↗</span></a>
-      <a href="/#contacto" class="btn btn-ghost">Solicitar presentación institucional</a>
+      <a href="/?motivo=Implementación%20institucional#contacto" class="btn btn-ghost">Solicitar presentación institucional</a>
     </div>
   </div>
 </section>
@@ -524,6 +547,7 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
       <h5>Conectar</h5>
       <a href="/#contacto">Formulario de contacto</a>
       <a href="mailto:contacto@kosler.cl">contacto@kosler.cl</a>
+      <a href="/privacidad">Privacidad</a>
     </div>
   </div>
   <div class="wrap foot-bottom">
@@ -586,15 +610,27 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
       if(!open&&restoreFocus)burger.focus();
     }
 
+    function closeDetails(){
+      menu.querySelectorAll('details[open]').forEach(function(details){
+        details.removeAttribute('open');
+      });
+    }
+
     burger.addEventListener('click',function(){
       setOpen(!menu.classList.contains('open'),false);
     });
     backdrop.addEventListener('click',function(){setOpen(false,true)});
     menu.querySelectorAll('a').forEach(function(link){
-      link.addEventListener('click',function(){setOpen(false,false)});
+      link.addEventListener('click',function(){closeDetails();setOpen(false,false)});
+    });
+    document.addEventListener('click',function(event){
+      if(!header.contains(event.target))closeDetails();
     });
     document.addEventListener('keydown',function(event){
-      if(event.key==='Escape'&&menu.classList.contains('open'))setOpen(false,true);
+      if(event.key==='Escape'){
+        closeDetails();
+        if(menu.classList.contains('open'))setOpen(false,true);
+      }
     });
     window.addEventListener('resize',function(){
       if(window.innerWidth>900&&menu.classList.contains('open'))setOpen(false,false);

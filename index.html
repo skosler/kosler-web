@@ -4,8 +4,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- ============ SEO ============ -->
-<title>Sebastián Kosler — Educación, IA y neurociencia aplicada al aprendizaje</title>
-<meta name="description" content="Sebastián Kosler diseña modelos, plataformas y estrategias que transforman datos educativos en mejores decisiones de aprendizaje. Modelo 3Learn, SEEDMAX, Rómpela PAES y NeuVA.">
+<title>Sebastián Kosler | Educación, IA y neurociencia</title>
+<meta name="description" content="Sebastián Kosler integra educación, IA y neurociencia para crear 3Learn, SEEDMAX, Rómpela PAES y NeuVA: mejores decisiones para aprender.">
 <meta name="author" content="Sebastián Kosler">
 <meta name="theme-color" content="#0B1628">
 <link rel="canonical" href="https://kosler.cl/">
@@ -38,10 +38,11 @@
   "@type": "Person",
   "name": "Sebastián Kosler",
   "url": "https://kosler.cl",
-  "jobTitle": "Investigador y creador de modelos de inteligencia educativa",
-  "description": "Educador e investigador que diseña modelos, plataformas y estrategias que conectan IA, neurociencia, evaluación y datos para el aprendizaje personalizado.",
+  "jobTitle": "Educador científico, fundador y CEO de SEEDMAX",
+  "description": "Educador científico y creador de modelos que conectan IA, neurociencia, evaluación y datos para el aprendizaje personalizado.",
   "knowsAbout": ["Inteligencia Artificial Educativa","Neurociencia del Aprendizaje","Evaluación Educativa","Analítica de Aprendizaje","Aprendizaje Personalizado"],
-  "worksFor": { "@type": "Organization", "name": "SEEDMAX" }
+  "worksFor": { "@type": "Organization", "name": "SEEDMAX", "url": "https://seedmax.cl" },
+  "sameAs": ["https://cl.linkedin.com/in/sebastian-kosler-cruz-05369826"]
 }
 </script>
 
@@ -215,6 +216,21 @@ header.nav.scrolled{
 .card h3{margin-bottom:12px}
 .card p{font-size:.97rem;max-width:none}
 
+/* =================== RUTAS POR AUDIENCIA =================== */
+.audience{margin-top:64px;padding-top:48px;border-top:1px solid var(--line)}
+.audience-head{display:flex;justify-content:space-between;gap:32px;align-items:end;margin-bottom:28px}
+.audience-head h3{font-size:clamp(1.65rem,3vw,2.25rem);max-width:18ch}
+.audience-head p{font-size:.96rem;max-width:48ch}
+.audience-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.audience-card{display:flex;flex-direction:column;min-height:210px;padding:25px;border:1px solid var(--line);
+  border-radius:16px;background:rgba(15,30,54,.72);transition:.35s var(--ease)}
+.audience-card:hover{transform:translateY(-5px);border-color:var(--orange);background:var(--navy-600)}
+.audience-card .who{font-family:var(--f-accent);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--amber);font-weight:700}
+.audience-card h4{font-size:1.12rem;margin:22px 0 10px}
+.audience-card p{font-size:.88rem;max-width:none;margin-bottom:auto}
+.audience-card .go{font-family:var(--f-mono);font-size:.72rem;color:var(--cream);margin-top:22px}
+
 /* =================== SOBRE MÍ =================== */
 .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(36px,5vw,72px);align-items:start}
 .about-grid .lead{margin-top:0}
@@ -227,6 +243,10 @@ header.nav.scrolled{
 .cred .mk{font-family:var(--f-accent);font-weight:700;font-size:.8rem;color:var(--orange);min-width:24px}
 .cred .ct{font-size:.95rem;color:var(--cream)}
 .cred .cs{font-size:.8rem;color:var(--cream-faint);display:block}
+.proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
+.proof{padding:24px;border:1px solid var(--line);border-radius:15px;background:var(--navy-700)}
+.proof strong{display:block;font-family:var(--f-accent);font-size:clamp(1.55rem,3vw,2.15rem);color:var(--amber);line-height:1}
+.proof span{display:block;font-size:.84rem;color:var(--cream-dim);margin-top:10px}
 
 /* =================== 3LEARN =================== */
 .dims{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:54px}
@@ -305,6 +325,8 @@ input:focus,textarea:focus,select:focus{outline:0;border-color:var(--orange)}
 textarea{resize:vertical;min-height:110px}
 .form-msg{font-size:.85rem;color:var(--amber);min-height:1em}
 .honeypot{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important}
+.privacy-note{font-size:.75rem;color:var(--cream-faint);max-width:none;line-height:1.5}
+.privacy-note a{color:var(--amber);text-decoration:underline;text-underline-offset:3px}
 
 .closing{text-align:center;padding:clamp(70px,10vh,120px) 0}
 .closing .big{font-family:var(--f-display);font-size:clamp(1.8rem,4.2vw,3.1rem);line-height:1.14;
@@ -334,7 +356,7 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
 @media(max-width:1000px){
   .hero-grid,.about-grid,.neuva-grid,.contact-grid{grid-template-columns:1fr}
   .hero-portrait{order:-1;justify-self:start;max-width:380px}
-  .cards-3,.dims,.posts,.mv{grid-template-columns:1fr 1fr}
+  .cards-3,.dims,.posts,.mv,.audience-grid,.proof-grid{grid-template-columns:1fr 1fr}
   .roadmap{grid-template-columns:1fr}.rm{border-right:0;border-bottom:1px solid var(--line)}.rm:last-child{border-bottom:0}
   .steps{grid-template-columns:1fr 1fr;gap:30px}.steps::before{display:none}
   .foot-grid{grid-template-columns:1fr 1fr}
@@ -349,7 +371,8 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
   .burger{display:flex;z-index:1002}
 }
 @media(max-width:680px){
-  .cards-3,.dims,.posts,.mv,.row2,.steps{grid-template-columns:1fr}
+  .cards-3,.dims,.posts,.mv,.row2,.steps,.audience-grid,.proof-grid{grid-template-columns:1fr}
+  .audience-head{display:block}.audience-head p{margin-top:14px}
   .foot-grid{grid-template-columns:1fr}
 }
 @media(prefers-reduced-motion:reduce){
@@ -501,15 +524,15 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
       <p class="sub reveal in" data-d="1">Educación, inteligencia artificial y neurociencia aplicada al aprendizaje.</p>
       <p class="intro reveal in" data-d="2">Diseño modelos, plataformas y estrategias que transforman datos educativos en mejores decisiones de aprendizaje. Desde el Modelo 3Learn hasta SEEDMAX, Rómpela PAES y NeuVA, mi trabajo conecta pedagogía, IA, evaluación y personalización para construir una nueva generación de educación inteligente en Latinoamérica.</p>
       <div class="hero-cta reveal in" data-d="3">
-        <a href="#contacto" class="btn btn-primary">Conversemos <span class="arr">→</span></a>
-        <a href="#seedmax" class="btn btn-ghost">Conocer SEEDMAX</a>
-        <a href="#treslearn" class="btn btn-text">Explorar 3Learn <span class="arr">→</span></a>
+        <a href="#contacto" class="btn btn-primary">Solicitar reunión <span class="arr">→</span></a>
+        <a href="#rutas" class="btn btn-ghost">Explorar ecosistema</a>
+        <a href="#insights" class="btn btn-text">Leer Insights <span class="arr">→</span></a>
       </div>
     </div>
     <aside class="hero-portrait reveal in" data-d="2">
       <!-- Coloca tu retrato en sebastian.webp (respaldo: sebastian.jpg).
            Mientras no exista, se muestra este marcador de posición. -->
-      <img src="sebastian.webp" alt="Sebastián Kosler, educador e investigador en inteligencia educativa" width="400" height="500" fetchpriority="high" decoding="async" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='sebastian.jpg'}else{this.onerror=null;this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500'%3E%3Crect width='400' height='500' fill='%230F1E36'/%3E%3Ccircle cx='200' cy='185' r='62' fill='%2316294A'/%3E%3Cpath d='M90 420c0-70 49-112 110-112s110 42 110 112v80H90z' fill='%2316294A'/%3E%3Ctext x='200' y='465' font-family='Arial,sans-serif' font-size='17' fill='%23B9B6AE' text-anchor='middle'%3ETu foto: sebastian.webp%3C/text%3E%3C/svg%3E&quot;}">
+      <img src="sebastian.webp" alt="Sebastián Kosler, educador científico y fundador de SEEDMAX" width="400" height="500" fetchpriority="high" decoding="async" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='sebastian.jpg'}else{this.onerror=null;this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500'%3E%3Crect width='400' height='500' fill='%230F1E36'/%3E%3Ccircle cx='200' cy='185' r='62' fill='%2316294A'/%3E%3Cpath d='M90 420c0-70 49-112 110-112s110 42 110 112v80H90z' fill='%2316294A'/%3E%3Ctext x='200' y='465' font-family='Arial,sans-serif' font-size='17' fill='%23B9B6AE' text-anchor='middle'%3ETu foto: sebastian.webp%3C/text%3E%3C/svg%3E&quot;}">
     </aside>
   </div>
   <div class="scroll-hint"><span>Scroll</span><span class="ln"></span></div>
@@ -526,6 +549,18 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
       <article class="card reveal" data-d="2"><span class="ix">02</span><h3>IA con criterio pedagógico</h3><p>Tecnología que explica, acompaña y personaliza, no solo automatiza.</p></article>
       <article class="card reveal" data-d="3"><span class="ix">03</span><h3>Aprendizaje integral</h3><p>Cognición, emoción y cuerpo como dimensiones inseparables del aprendizaje.</p></article>
     </div>
+    <div class="audience" id="rutas">
+      <div class="audience-head reveal">
+        <h3>Encuentra tu ruta</h3>
+        <p>El ecosistema combina acompañamiento, modelos, plataformas y colaboración institucional. Elige el punto de entrada que mejor responde a tu objetivo.</p>
+      </div>
+      <div class="audience-grid">
+        <a class="audience-card reveal" data-d="1" href="#rompela"><span class="who">Estudiantes y familias</span><h4>Preparar la PAES con foco</h4><p>Diagnóstico, entrenamiento y acompañamiento personalizado.</p><span class="go">Ver alternativas →</span></a>
+        <a class="audience-card reveal" data-d="2" href="#conferencias"><span class="who">Colegios e instituciones</span><h4>Fortalecer decisiones educativas</h4><p>Charlas, asesorías e implementación de modelos con criterio pedagógico.</p><span class="go">Explorar colaboración →</span></a>
+        <a class="audience-card reveal" data-d="3" href="#seedmax"><span class="who">EdTech y aliados</span><h4>Construir inteligencia educativa</h4><p>IA, analítica y arquitectura de aprendizaje para proyectos con impacto.</p><span class="go">Conocer SEEDMAX →</span></a>
+        <a class="audience-card reveal" data-d="4" href="#conferencias"><span class="who">Conferencias y medios</span><h4>Abrir conversaciones relevantes</h4><p>IA educativa, neurociencia, evaluación, PAES y futuro del aprendizaje.</p><span class="go">Ver temáticas →</span></a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -535,20 +570,26 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
     <div>
       <span class="eyebrow reveal">02 / Sobre mí</span>
       <h2 class="reveal" data-d="1">Quién soy</h2>
-      <p class="lead reveal" data-d="2">Soy Sebastián Kosler, educador, investigador y creador de modelos educativos aplicados al aprendizaje personalizado. Mi formación integra ciencias biológicas, pedagogía, evaluación educativa, neurociencias aplicadas y doctorado en educación.</p>
+      <p class="lead reveal" data-d="2">Soy Sebastián Kosler, educador científico, docente y creador de modelos educativos aplicados al aprendizaje personalizado. Mi formación integra ciencias biológicas, innovación curricular, evaluación educativa y estudios doctorales en educación. Actualmente curso un Magíster en Neurociencias aplicadas a la Educación.</p>
       <p class="reveal" data-d="2" style="margin-top:18px">Mi foco actual está en el diseño de soluciones que conectan inteligencia artificial, neurociencia, evaluación y datos para mejorar la forma en que estudiantes, docentes e instituciones toman decisiones de aprendizaje.</p>
     </div>
     <div class="creds reveal" data-d="2">
       <div class="ctitle">Formación &amp; trayectoria</div>
       <div class="cred"><span class="mk">01</span><span><span class="ct">Médico Veterinario</span><span class="cs">Universidad de Chile</span></span></div>
-      <div class="cred"><span class="mk">02</span><span><span class="ct">Profesor de Educación Media · Biología</span><span class="cs">Universidad de los Andes</span></span></div>
+      <div class="cred"><span class="mk">02</span><span><span class="ct">20 años de docencia en ciencias y preparación PAES</span><span class="cs">Física · Química · Biología · PAA / PSU / PAES</span></span></div>
       <div class="cred"><span class="mk">03</span><span><span class="ct">Magíster en Innovación Curricular y Evaluación Educativa</span><span class="cs">Universidad del Desarrollo</span></span></div>
-      <div class="cred"><span class="mk">04</span><span><span class="ct">Magíster en Neurociencias aplicadas a la Educación</span><span class="cs">TECH Universidad</span></span></div>
+      <div class="cred"><span class="mk">04</span><span><span class="ct">Magíster en Neurociencias aplicadas a la Educación · en curso</span><span class="cs">TECH Universidad</span></span></div>
       <div class="cred"><span class="mk">05</span><span><span class="ct">Doctorando en Educación</span><span class="cs">UNINI MX</span></span></div>
-      <div class="cred"><span class="mk">06</span><span><span class="ct">Autor de ebooks educativos</span><span class="cs">Neurociencia y Aprendizaje · Estrategias Claves PAES · Manual de Postulación PAES</span></span></div>
+      <div class="cred"><span class="mk">06</span><span><span class="ct">Docencia universitaria · 2015–2018</span><span class="cs">Didáctica de la Biología y supervisión de prácticas · Universidad de los Andes</span></span></div>
       <div class="cred"><span class="mk">07</span><span><span class="ct">Creador del Modelo 3Learn</span><span class="cs">Marco pedagógico cognición · emoción · cuerpo</span></span></div>
-      <div class="cred"><span class="mk">08</span><span><span class="ct">Fundador estratégico de SEEDMAX</span><span class="cs">Inteligencia educativa para Latinoamérica</span></span></div>
+      <div class="cred"><span class="mk">08</span><span><span class="ct">Fundador y CEO de SEEDMAX</span><span class="cs">Inteligencia educativa para Latinoamérica</span></span></div>
     </div>
+  </div>
+  <div class="wrap proof-grid">
+    <div class="proof reveal" data-d="1"><strong>20+</strong><span>años enseñando ciencias y preparando evaluaciones de acceso universitario</span></div>
+    <div class="proof reveal" data-d="2"><strong>15+</strong><span>años de acompañamiento educativo en el Centro de Aprendizaje Las Condes</span></div>
+    <div class="proof reveal" data-d="3"><strong>2015–2018</strong><span>docencia universitaria en Didáctica de la Biología y prácticas pedagógicas</span></div>
+    <div class="proof reveal" data-d="4"><strong>4</strong><span>iniciativas articuladas: 3Learn, SEEDMAX, Rómpela PAES y NeuVA</span></div>
   </div>
 </section>
 
@@ -712,23 +753,25 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
     </div>
     <form id="contact-form" class="reveal" data-d="2" action="https://formspree.io/f/mqpzyedw" method="POST" novalidate="">
       <input type="hidden" name="_subject">
-      <div class="honeypot" aria-hidden="true"><label for="website">No completar</label><input id="website" name="_gotcha" type="text" tabindex="-1" autocomplete="off"></div>
-      <div class="field"><label for="n">Nombre</label><input id="n" name="nombre" type="text" required="" placeholder="Tu nombre"></div>
+      <input class="honeypot" id="website" name="_gotcha" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="field"><label for="n">Nombre</label><input id="n" name="nombre" type="text" required="" placeholder="Tu nombre" autocomplete="name"></div>
       <div class="row2">
-        <div class="field"><label for="e">Correo</label><input id="e" name="email" type="email" required="" placeholder="tucorreo@ejemplo.com"></div>
-        <div class="field"><label for="i">Institución / empresa</label><input id="i" name="institucion" type="text" placeholder="Opcional"></div>
+        <div class="field"><label for="e">Correo</label><input id="e" name="email" type="email" required="" placeholder="tucorreo@ejemplo.com" autocomplete="email"></div>
+        <div class="field"><label for="i">Institución / empresa</label><input id="i" name="institucion" type="text" placeholder="Opcional" autocomplete="organization"></div>
       </div>
       <div class="field"><label for="m">Motivo de contacto</label>
         <select id="m" name="motivo">
           <option>Conferencia o charla</option><option>Asesoría / consultoría</option>
           <option>Alianza estratégica</option><option>Prensa / entrevista</option>
           <option>SEEDMAX</option><option>Rómpela PAES</option>
-          <option>Coaching PAES Ciencias 101</option><option>Otro</option>
+          <option>Coaching PAES Ciencias 101</option><option>NeuVA</option>
+          <option>Modelo 3Learn</option><option>Implementación institucional</option><option>Otro</option>
         </select>
       </div>
       <div class="field"><label for="ms">Mensaje</label><textarea id="ms" name="mensaje" required="" placeholder="Cuéntame brevemente en qué te puedo ayudar"></textarea></div>
       <button type="submit" class="btn btn-primary" style="justify-content:center">Enviar mensaje <span class="arr">→</span></button>
       <span class="form-msg" id="form-msg" role="status"></span>
+      <p class="privacy-note">Al enviar este formulario aceptas que usemos tus datos para responder tu solicitud. Revisa la <a href="/privacidad">política de privacidad</a>.</p>
     </form>
   </div>
   <div class="wrap closing">
@@ -753,11 +796,11 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
     </div>
     <div class="foot-col">
       <h5>Conectar</h5>
-      <!-- TODO: reemplazar por la URL real de tu perfil de LinkedIn -->
-      <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="https://cl.linkedin.com/in/sebastian-kosler-cruz-05369826" target="_blank" rel="noopener">LinkedIn ↗</a>
       <a href="#insights">Insights</a>
       <a href="#conferencias">Charlas</a>
       <a href="#contacto">Contacto</a>
+      <a href="/privacidad">Privacidad</a>
     </div>
   </div>
   <div class="wrap foot-bottom">
@@ -791,6 +834,12 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
    ========================================================= */
 const form = document.getElementById('contact-form');
 const msg = document.getElementById('form-msg');
+const motive = new URLSearchParams(location.search).get('motivo');
+if (motive) {
+  const select = document.getElementById('m');
+  const match = Array.from(select.options).find(option => option.value === motive);
+  if (match) select.value = motive;
+}
 form.addEventListener('submit', async (ev) => {
   ev.preventDefault();
   const d = new FormData(form);
@@ -829,6 +878,8 @@ form.addEventListener('submit', async (ev) => {
   let w, h, nodes = [], DPR = Math.min(devicePixelRatio||1, 2);
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const mouse = {x:-9999, y:-9999};
+  let raf = 0;
+  let running = false;
 
   function resize(){
     w = c.clientWidth; h = c.clientHeight;
@@ -842,7 +893,7 @@ form.addEventListener('submit', async (ev) => {
     }));
   }
 
-  function step(){
+  function draw(){
     ctx.clearRect(0,0,w,h);
     for (let i=0;i<nodes.length;i++){
       const n = nodes[i];
@@ -871,16 +922,32 @@ form.addEventListener('submit', async (ev) => {
       else { ctx.fillStyle='rgba(185,182,174,.55)'; ctx.shadowBlur=0; }
       ctx.fill(); ctx.shadowBlur=0;
     }
-    requestAnimationFrame(step);
   }
 
-  addEventListener('resize', resize, {passive:true});
+  function step(){
+    if (!running) return;
+    draw();
+    raf = requestAnimationFrame(step);
+  }
+
+  function start(){
+    if (reduce) { draw(); return; }
+    if (!running) { running = true; step(); }
+  }
+
+  function stop(){
+    running = false;
+    cancelAnimationFrame(raf);
+  }
+
+  addEventListener('resize', () => { resize(); if (reduce) draw(); }, {passive:true});
   c.addEventListener('mousemove', e => { const r=c.getBoundingClientRect(); mouse.x=e.clientX-r.left; mouse.y=e.clientY-r.top; });
   c.addEventListener('mouseleave', () => { mouse.x=-9999; mouse.y=-9999; });
-  resize(); step();
+  document.addEventListener('visibilitychange', () => document.hidden ? stop() : start());
+  resize(); start();
 })();
 </script>
-<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a2d0f5a81a07c3c0',t:'MTc4NzA1NjUzOA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; visibility: hidden;"></iframe><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a2d0fff4cdddc3c0',t:'MTc4NzA1Njk2MA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; visibility: hidden;"></iframe><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a2d1098b088cc3c0',t:'MTc4NzA1NzM1Mw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; visibility: hidden;"></iframe><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a2d11714eeafc3c0',t:'MTc4NzA1NzkwNw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; visibility: hidden;"></iframe><script id="kosler-mobile-menu-inline-js">
+<script id="kosler-mobile-menu-inline-js">
 (function(){
   'use strict';
 
@@ -922,15 +989,27 @@ form.addEventListener('submit', async (ev) => {
       if(!open&&restoreFocus)burger.focus();
     }
 
+    function closeDetails(){
+      menu.querySelectorAll('details[open]').forEach(function(details){
+        details.removeAttribute('open');
+      });
+    }
+
     burger.addEventListener('click',function(){
       setOpen(!menu.classList.contains('open'),false);
     });
     backdrop.addEventListener('click',function(){setOpen(false,true)});
     menu.querySelectorAll('a').forEach(function(link){
-      link.addEventListener('click',function(){setOpen(false,false)});
+      link.addEventListener('click',function(){closeDetails();setOpen(false,false)});
+    });
+    document.addEventListener('click',function(event){
+      if(!header.contains(event.target))closeDetails();
     });
     document.addEventListener('keydown',function(event){
-      if(event.key==='Escape'&&menu.classList.contains('open'))setOpen(false,true);
+      if(event.key==='Escape'){
+        closeDetails();
+        if(menu.classList.contains('open'))setOpen(false,true);
+      }
     });
     window.addEventListener('resize',function(){
       if(window.innerWidth>900&&menu.classList.contains('open'))setOpen(false,false);

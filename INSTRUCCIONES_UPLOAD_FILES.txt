@@ -1,10 +1,10 @@
 REEMPLAZO COMPLETO DE KOSLER.CL DESDE GITHUB
 
-1. Descomprime KOSLER_CL_PUBLICACION_V11_MENU_INTERNO.zip.
+1. Descomprime KOSLER_CL_PUBLICACION_V13_CONTACTO_3LEARN.zip.
 2. Abre la raíz del repositorio en GitHub.
 3. Selecciona Add file > Upload files.
 4. Entra a la carpeta descomprimida.
-5. Selecciona los 24 archivos que contiene.
+5. Selecciona los 27 archivos que contiene.
 6. Arrástralos directamente a la raíz del repositorio.
 7. Confirma el reemplazo de index.html y los demás archivos coincidentes.
 8. Si todavía existe rompela-paes.html de una versión anterior, elimínalo del repositorio: ya no forma parte de esta versión ni del menú.
@@ -33,8 +33,11 @@ ARCHIVOS Y SERVICIOS CONSERVADOS
 - neu-va.html se publica como /neu-va.
 - coaching-paes-ciencias-101.html se publica como /coaching-paes-ciencias-101.
 - 3learn.html se publica como /3learn y se abre desde el botón de la sección 3Learn.
+- En 3learn.html, el contacto dirige únicamente al formulario general /#contacto.
 - insights.html y los seis archivos insight-*.html se conservan.
 - Los formularios permanecen conectados a Formspree:
   - Contacto general: mqpzyedw
   - Coaching 101: mzepjdaq
 - El menú móvil conserva el marcador KOSLER_MENU_INLINE_V4_20260819.
+- privacidad.html se publica como /privacidad.
+- robots.txt y sitemap.xml se publican en la raíz para facilitar indexación.

@@ -14,6 +14,6 @@ Los sitios externos se abren solamente mediante botones dentro del contenido:
 - Ir a Rómpela PAES: https://rompelapaes.cl/
 - Conocer el diagnóstico express: https://rompelapaes.com/
 
-El mismo menú fue actualizado dentro de todos los HTML para asegurar un comportamiento consistente en portada, páginas internas, Insights y artículos.
+El mismo menú fue actualizado dentro de todos los HTML para asegurar un comportamiento consistente en portada, páginas internas, Insights, artículos y privacidad. El desplegable se cierra al elegir un destino, hacer clic fuera o presionar Escape.
 
 La corrección del menú móvil sólido y opaco permanece insertada directamente en cada HTML con el marcador KOSLER_MENU_INLINE_V4_20260819.

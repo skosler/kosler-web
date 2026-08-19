@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <!-- ============ SEO ============ -->
-<title>Modelo 3Learn — Cognición, emoción y cuerpo | Sebastián Kosler</title>
-<meta name="description" content="3Learn es un modelo educativo desarrollado por Sebastián Kosler que integra cognición, emoción y cuerpo para potenciar el aprendizaje mediante neurociencia, evaluación formativa e inteligencia artificial educativa." />
+<title>Modelo 3Learn: cognición, emoción y cuerpo | Kosler</title>
+<meta name="description" content="3Learn integra cognición, emoción y cuerpo para diseñar experiencias de aprendizaje con neurociencia, evaluación formativa e IA educativa." />
 <meta name="author" content="Sebastián Kosler" />
 <meta name="theme-color" content="#0B1628" />
 <link rel="canonical" href="https://kosler.cl/3learn" />
@@ -152,13 +152,25 @@ header.nav.scrolled{
 .hero::after{
   content:"";position:absolute;z-index:1;width:44vw;height:44vw;left:-14vw;bottom:-16vw;
   background:radial-gradient(circle,rgba(242,153,74,.10),transparent 60%);pointer-events:none}
-.hero-inner{position:relative;z-index:2;width:100%}
+.hero-inner{position:relative;z-index:2;width:100%;display:grid;grid-template-columns:1.08fr .92fr;
+  gap:clamp(42px,6vw,88px);align-items:center}
 .hero h1{font-size:clamp(2.9rem,7vw,5.6rem);font-weight:620;letter-spacing:-.038em;line-height:.98}
 .hero h1 span{color:var(--amber)}
 .hero .sub{font-family:var(--f-accent);font-size:clamp(.92rem,1.6vw,1.12rem);
   color:var(--amber);letter-spacing:.005em;margin:26px 0 22px;font-weight:600}
 .hero .intro{font-size:clamp(1rem,1.4vw,1.18rem);color:var(--cream-dim);max-width:58ch}
 .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px}
+.hero-visual{border:1px solid rgba(242,153,74,.3);border-radius:24px;padding:clamp(24px,3vw,36px);
+  background:linear-gradient(155deg,rgba(22,41,74,.95),rgba(11,22,40,.92));box-shadow:0 30px 80px -34px #000}
+.hero-visual .visual-label{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cream-faint)}
+.hero-layer{display:grid;grid-template-columns:42px 1fr;gap:16px;align-items:center;margin-top:16px;padding:17px 18px;
+  border:1px solid var(--line);border-radius:14px;background:rgba(7,15,28,.55)}
+.hero-layer .mark{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-family:var(--f-accent);font-weight:800;
+  color:var(--amber);background:var(--amber-soft)}
+.hero-layer strong{display:block;color:var(--cream);font-family:var(--f-display);font-weight:560}
+.hero-layer span{font-size:.82rem;color:var(--cream-faint)}
+.hero-result{margin-top:20px;padding-top:20px;border-top:1px solid var(--line);font-family:var(--f-accent);font-size:.78rem;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--amber);text-align:center}
 
 /* =================== CARDS =================== */
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(34px,5vw,64px);align-items:center}
@@ -240,7 +252,8 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
 
 /* =================== RESPONSIVE =================== */
 @media(max-width:1000px){
-  .grid-2{grid-template-columns:1fr}
+  .hero-inner,.grid-2{grid-template-columns:1fr}
+  .hero-visual{max-width:640px}
   .cards-3{grid-template-columns:1fr 1fr}
   .steps{grid-template-columns:1fr 1fr;gap:30px}.steps::before{display:none}
   .foot-grid{grid-template-columns:1fr 1fr}
@@ -399,13 +412,22 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
 <!-- ===================== HERO ===================== -->
 <section class="hero" id="inicio">
   <div class="wrap hero-inner">
-    <h1 class="reveal">Modelo <span>3Learn</span></h1>
-    <p class="sub reveal" data-d="1">Modelo pedagógico · Neurociencia · IA educativa</p>
-    <p class="intro reveal" data-d="2">Un modelo educativo que integra cognición, emoción y cuerpo para potenciar el aprendizaje mediante neurociencia, evaluación formativa e inteligencia artificial educativa.</p>
-    <div class="hero-cta reveal" data-d="3">
-      <a href="#modelo" class="btn btn-primary">Explorar el modelo <span class="arr">→</span></a>
-      <a href="/#contacto" class="btn btn-ghost">Contactar</a>
+    <div class="hero-copy">
+      <h1 class="reveal">Modelo <span>3Learn</span></h1>
+      <p class="sub reveal" data-d="1">Modelo pedagógico · Neurociencia · IA educativa</p>
+      <p class="intro reveal" data-d="2">Un modelo educativo que integra cognición, emoción y cuerpo para potenciar el aprendizaje mediante neurociencia, evaluación formativa e inteligencia artificial educativa.</p>
+      <div class="hero-cta reveal" data-d="3">
+        <a href="#modelo" class="btn btn-primary">Explorar el modelo <span class="arr">→</span></a>
+        <a href="/?motivo=Modelo%203Learn#contacto" class="btn btn-ghost">Conversar sobre 3Learn</a>
+      </div>
     </div>
+    <aside class="hero-visual reveal" data-d="2" aria-label="Las tres dimensiones del Modelo 3Learn">
+      <span class="visual-label">Arquitectura integral</span>
+      <div class="hero-layer"><span class="mark">C</span><span><strong>Cognición</strong><span>Comprender, aplicar y transferir</span></span></div>
+      <div class="hero-layer"><span class="mark">E</span><span><strong>Emoción</strong><span>Regular, motivar y perseverar</span></span></div>
+      <div class="hero-layer"><span class="mark">C</span><span><strong>Cuerpo</strong><span>Activar atención, energía y presencia</span></span></div>
+      <div class="hero-result">Tres dimensiones · una experiencia de aprendizaje</div>
+    </aside>
   </div>
 </section>
 
@@ -546,7 +568,7 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
     <div class="foot-col">
       <h5>Conectar</h5>
       <a href="/#contacto">Formulario de contacto</a>
-      <a href="mailto:contacto@kosler.cl">contacto@kosler.cl</a>
+      <a href="/privacidad">Privacidad</a>
     </div>
   </div>
   <div class="wrap foot-bottom">
@@ -609,15 +631,27 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
       if(!open&&restoreFocus)burger.focus();
     }
 
+    function closeDetails(){
+      menu.querySelectorAll('details[open]').forEach(function(details){
+        details.removeAttribute('open');
+      });
+    }
+
     burger.addEventListener('click',function(){
       setOpen(!menu.classList.contains('open'),false);
     });
     backdrop.addEventListener('click',function(){setOpen(false,true)});
     menu.querySelectorAll('a').forEach(function(link){
-      link.addEventListener('click',function(){setOpen(false,false)});
+      link.addEventListener('click',function(){closeDetails();setOpen(false,false)});
+    });
+    document.addEventListener('click',function(event){
+      if(!header.contains(event.target))closeDetails();
     });
     document.addEventListener('keydown',function(event){
-      if(event.key==='Escape'&&menu.classList.contains('open'))setOpen(false,true);
+      if(event.key==='Escape'){
+        closeDetails();
+        if(menu.classList.contains('open'))setOpen(false,true);
+      }
     });
     window.addEventListener('resize',function(){
       if(window.innerWidth>900&&menu.classList.contains('open'))setOpen(false,false);
