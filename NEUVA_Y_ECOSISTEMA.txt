@@ -1,21 +1,19 @@
-ACTUALIZACIÓN NEUVA Y MENÚ ECOSISTEMA
+ACTUALIZACIÓN DEL MENÚ ECOSISTEMA
 
-Esta entrega incluye:
+La navegación del menú quedó separada de los botones externos:
 
-- Nueva página independiente de NeuVA: neuva.html
-- Nueva opción “Ecosistema” en la navegación global.
-- Accesos directos a 3Learn, NeuVA, SEEDMAX, Rómpela PAES y Coaching PAES 101.
-- Menú lateral móvil con fondo sólido y opaco en todas las páginas.
-- Estilos y funcionamiento del menú insertados dentro de cada HTML para evitar fallas por archivos externos o caché.
-- Ruta /neu-va servida desde el archivo plano neu-va.html, sin reglas en _redirects.
+- Modelo 3Learn desplaza a la sección 3Learn de la portada.
+- NeuVA abre la página interna /neu-va.
+- SEEDMAX desplaza a la sección SEEDMAX de la portada.
+- Rómpela PAES desplaza a la sección Rómpela PAES de la portada.
+- Coaching PAES 101 abre la página interna /coaching-paes-ciencias-101.
 
-PUBLICACIÓN EN GITHUB
+Los sitios externos se abren solamente mediante botones dentro del contenido:
 
-Sube todos los archivos que están dentro de esta carpeta a la raíz del repositorio y acepta reemplazar los archivos existentes. No subas la carpeta contenedora como una subcarpeta.
+- Visitar SEEDMAX: https://seedmax.cl
+- Ir a Rómpela PAES: https://rompelapaes.cl/
+- Conocer el diagnóstico express: https://rompelapaes.com/
 
-Después de publicar, prueba el sitio en una ventana privada y revisa especialmente:
+El mismo menú fue actualizado dentro de todos los HTML para asegurar un comportamiento consistente en portada, páginas internas, Insights y artículos.
 
-1. El menú lateral desde un teléfono.
-2. La opción Ecosistema.
-3. La ruta https://kosler.cl/neu-va
-4. Los formularios y botones principales.
+La corrección del menú móvil sólido y opaco permanece insertada directamente en cada HTML con el marcador KOSLER_MENU_INLINE_V4_20260819.

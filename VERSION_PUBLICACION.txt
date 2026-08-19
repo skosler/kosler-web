@@ -1,14 +1,30 @@
-KOSLER.CL — ENTREGA NEUVA + ECOSISTEMA
-Versión: 2026-08-19 V8 — estructura plana para carga directa
+KOSLER.CL — MENÚ 100% INTERNO
+Versión: 2026-08-19 V11 — estructura plana para carga directa
 
-Indicadores para comprobar que esta versión fue publicada:
+Regla de navegación aplicada en todos los HTML:
 
-1. La navegación superior muestra “Ecosistema”.
-2. Dentro de Ecosistema aparecen 3Learn, NeuVA, SEEDMAX, Rómpela PAES y Coaching PAES 101.
-3. https://kosler.cl/neu-va abre la página independiente neu-va.html.
-4. El menú lateral móvil tiene un fondo sólido y opaco.
+1. Inicio lleva a /#inicio.
+2. Sobre mí lleva a /#sobre-mi.
+3. Modelo 3Learn lleva a /#treslearn.
+4. NeuVA lleva a /neu-va.
+5. SEEDMAX lleva a /#seedmax.
+6. Rómpela PAES lleva a /#rompela.
+7. Coaching PAES 101 lleva a /coaching-paes-ciencias-101.
+8. Insights lleva a /#insights.
+9. Conferencias lleva a /#conferencias.
+10. Contacto lleva a /#contacto.
 
-IMPORTANTE:
-Subir directamente todos los archivos a la raíz del repositorio de GitHub. Esta versión no contiene subcarpetas ni archivos index.html duplicados.
+Ninguna opción del menú principal o del menú Ecosistema abre un dominio externo.
+Los accesos externos a seedmax.cl, rompelapaes.cl y rompelapaes.com están únicamente en los botones de contenido.
 
-Los enlaces del menú Ecosistema navegan en la misma pestaña. NeuVA no utiliza reglas en _redirects.
+Se conserva:
+
+- Un único index.html.
+- Estructura completamente plana.
+- Página interna de NeuVA.
+- Página interna de Coaching PAES Ciencias 101.
+- Página complementaria de 3Learn, accesible desde el botón de su sección.
+- Insights y seis artículos.
+- Formularios existentes.
+- Menú móvil sólido KOSLER_MENU_INLINE_V4_20260819.
+- Sin redirecciones para NeuVA.

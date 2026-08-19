@@ -4,6 +4,8 @@ Esta carpeta contiene el sitio completo. La corrección fue aplicada a:
 
 - Portada principal.
 - Modelo 3Learn.
+- NeuVA.
+- Rómpela PAES.
 - Coaching PAES Ciencias 101.
 - Portal de Insights.
 - Los seis artículos de Insights.
