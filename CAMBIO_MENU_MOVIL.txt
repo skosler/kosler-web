@@ -1,0 +1,31 @@
+KOSLER.CL — CORRECCIÓN GLOBAL DEL MENÚ MÓVIL
+
+Esta carpeta contiene el sitio completo. La corrección fue aplicada a:
+
+- Portada principal.
+- Modelo 3Learn.
+- Coaching PAES Ciencias 101.
+- Portal de Insights.
+- Los seis artículos de Insights.
+
+MEJORAS DEL MENÚ
+
+- Panel azul marino totalmente opaco.
+- Desactivación de filtros de transparencia al abrirlo.
+- Capa oscura sobre el contenido exterior.
+- Bloqueo del desplazamiento de la página mientras está abierto.
+- Cierre mediante el botón, la capa exterior, un enlace o la tecla Escape.
+- Botón de cierre animado y atributos de accesibilidad.
+- Navegación móvil incorporada también en Insights y sus artículos.
+
+VERSIÓN AUTOCONTENIDA
+
+El diseño y el funcionamiento del menú están incorporados directamente dentro
+de cada página HTML. Por lo tanto, el menú seguirá funcionando aunque durante
+la subida se omitan accidentalmente mobile-menu.css o mobile-menu.js.
+
+IMPORTANTE PARA GITHUB
+
+Subir todos los archivos de esta carpeta a la raíz del repositorio. Es
+importante reemplazar todos los HTML anteriores, especialmente insights.html
+y los seis archivos insight-*.html.
