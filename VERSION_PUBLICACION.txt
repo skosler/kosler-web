@@ -1,14 +1,14 @@
 KOSLER.CL — ENTREGA NEUVA + ECOSISTEMA
-Versión: 2026-08-19 V7 — navegación directa sin redirecciones
+Versión: 2026-08-19 V8 — estructura plana para carga directa
 
 Indicadores para comprobar que esta versión fue publicada:
 
 1. La navegación superior muestra “Ecosistema”.
 2. Dentro de Ecosistema aparecen 3Learn, NeuVA, SEEDMAX, Rómpela PAES y Coaching PAES 101.
-3. https://kosler.cl/neu-va/ abre una página independiente desde neu-va/index.html.
+3. https://kosler.cl/neu-va abre la página independiente neu-va.html.
 4. El menú lateral móvil tiene un fondo sólido y opaco.
 
 IMPORTANTE:
-Subir directamente todos los archivos y carpetas a la raíz del repositorio de GitHub, incluyendo la carpeta neu-va con su index.html. Reemplazar los archivos existentes.
+Subir directamente todos los archivos a la raíz del repositorio de GitHub. Esta versión no contiene subcarpetas ni archivos index.html duplicados.
 
-Los enlaces del menú Ecosistema navegan en la misma pestaña. NeuVA no utiliza reglas de redirección.
+Los enlaces del menú Ecosistema navegan en la misma pestaña. NeuVA no utiliza reglas en _redirects.
