@@ -1,0 +1,21 @@
+ACTUALIZACIÓN NEUVA Y MENÚ ECOSISTEMA
+
+Esta entrega incluye:
+
+- Nueva página independiente de NeuVA: neuva.html
+- Nueva opción “Ecosistema” en la navegación global.
+- Accesos directos a 3Learn, NeuVA, SEEDMAX, Rómpela PAES y Coaching PAES 101.
+- Menú lateral móvil con fondo sólido y opaco en todas las páginas.
+- Estilos y funcionamiento del menú insertados dentro de cada HTML para evitar fallas por archivos externos o caché.
+- Ruta /neuva configurada en el archivo _redirects.
+
+PUBLICACIÓN EN GITHUB
+
+Sube todos los archivos que están dentro de esta carpeta a la raíz del repositorio y acepta reemplazar los archivos existentes. No subas la carpeta contenedora como una subcarpeta.
+
+Después de publicar, prueba el sitio en una ventana privada y revisa especialmente:
+
+1. El menú lateral desde un teléfono.
+2. La opción Ecosistema.
+3. La ruta https://kosler.cl/neuva
+4. Los formularios y botones principales.

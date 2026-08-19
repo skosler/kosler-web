@@ -1,0 +1,12 @@
+KOSLER.CL — ENTREGA NEUVA + ECOSISTEMA
+Versión: 2026-08-19 V5
+
+Indicadores para comprobar que esta versión fue publicada:
+
+1. La navegación superior muestra “Ecosistema”.
+2. Dentro de Ecosistema aparecen 3Learn, NeuVA, SEEDMAX, Rómpela PAES y Coaching PAES 101.
+3. https://kosler.cl/neuva abre una página independiente y no redirige a /#neuva.
+4. El menú lateral móvil tiene un fondo sólido y opaco.
+
+IMPORTANTE:
+Subir directamente todos los archivos de esta carpeta a la raíz del repositorio de GitHub, incluyendo neuva.html y _redirects. Reemplazar los archivos existentes.

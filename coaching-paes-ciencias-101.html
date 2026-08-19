@@ -156,11 +156,62 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:55px 
   .burger[data-kosler-generated="true"]{display:none!important}
 }
 
-</style></head>
+</style><!-- KOSLER_ECOSYSTEM_MENU_V1 -->
+<style id="kosler-ecosystem-menu-inline">
+/* Navegación global del ecosistema Kosler */
+.eco-menu{position:relative}
+.eco-menu summary{display:flex;align-items:center;gap:7px;list-style:none;cursor:pointer;
+  color:#B9B6AE;font-size:.86rem;line-height:1.2;white-space:nowrap;user-select:none}
+.eco-menu summary::-webkit-details-marker{display:none}
+.eco-menu summary::after{content:"⌄";color:#F2994A;font-size:.8rem;transition:transform .2s ease}
+.eco-menu[open] summary{color:#EDE8DF}
+.eco-menu[open] summary::after{transform:rotate(180deg)}
+.eco-panel{position:absolute;top:calc(100% + 18px);left:50%;transform:translateX(-50%);
+  width:270px;padding:10px;background:#070F1C;border:1px solid rgba(237,232,223,.18);
+  border-radius:15px;box-shadow:0 24px 60px rgba(0,0,0,.62);z-index:2300}
+.eco-panel::before{content:"";position:absolute;left:50%;top:-7px;width:12px;height:12px;
+  transform:translateX(-50%) rotate(45deg);background:#070F1C;
+  border-left:1px solid rgba(237,232,223,.18);border-top:1px solid rgba(237,232,223,.18)}
+.eco-panel a{display:block!important;padding:11px 13px!important;border-radius:9px!important;
+  color:#B9B6AE!important;font-size:.88rem!important;line-height:1.25!important}
+.eco-panel a:hover{background:#0F1E36!important;color:#EDE8DF!important}
+.eco-panel small{display:block;color:#7E8597;font-size:.7rem;margin-top:3px}
+
+@media(max-width:900px){
+  .eco-menu{width:100%}
+  .eco-menu summary{width:100%;padding:14px 4px;color:#EDE8DF;font-size:1.04rem;
+    border-bottom:1px solid rgba(237,232,223,.11)}
+  .eco-menu summary::after{margin-left:auto;margin-right:4px}
+  .eco-panel{position:static;width:100%;transform:none;margin:5px 0 8px;padding:6px;
+    background:#0B1628;border-radius:11px;box-shadow:none}
+  .eco-panel::before{display:none}
+  .eco-panel a{padding:11px 14px!important;border-bottom:1px solid rgba(237,232,223,.08)!important;
+    font-size:.93rem!important}
+  .eco-panel a:last-child{border-bottom:0!important}
+}
+
+</style>
+</head>
 <body>
 <header class="nav" id="nav"><div class="nav-inner">
   <a href="/" class="brand"><span class="dot"></span>Sebastián Kosler</a>
-  <nav class="nav-links" id="menu"><a href="/">Inicio</a><a href="#metodo">Método</a><a href="#incluye">Qué incluye</a><a href="#para-quien">Para quién</a><a href="#postular" class="nav-cta">Postular</a></nav>
+  <nav class="nav-links" id="menu" aria-label="Navegación principal">
+      <a href="/">Inicio</a>
+      <a href="/#sobre-mi">Sobre mí</a>
+      <details class="eco-menu">
+        <summary>Ecosistema</summary>
+        <div class="eco-panel">
+          <a href="/3learn">Modelo 3Learn<small>Cognición · emoción · cuerpo</small></a>
+          <a href="/neuva">NeuVA<small>Asistente neuroeducativo</small></a>
+          <a href="https://seedmax.cl" target="_blank" rel="noopener">SEEDMAX<small>Inteligencia educativa</small></a>
+          <a href="https://rompelapaes.cl/" target="_blank" rel="noopener">Rómpela PAES<small>Diagnóstico y entrenamiento</small></a>
+          <a href="/coaching-paes-ciencias-101">Coaching PAES 101<small>Acompañamiento personalizado</small></a>
+        </div>
+      </details>
+      <a href="/insights">Insights</a>
+      <a href="/#conferencias">Conferencias</a>
+      <a href="/#contacto" class="nav-cta">Contacto</a>
+    </nav>
   <button class="burger" id="burger" aria-label="Abrir menú"><span></span><span></span><span></span></button>
 </div></header>
 

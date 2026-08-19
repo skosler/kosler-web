@@ -1,0 +1,69 @@
+/* Menú móvil global de kosler.cl — fondo realmente opaco */
+.kosler-menu-backdrop{display:none}
+
+@media (max-width:900px){
+  body.kosler-menu-open{overflow:hidden!important;touch-action:none}
+
+  .burger{
+    display:flex!important;position:relative;z-index:2101;flex-direction:column;
+    justify-content:center;align-items:center;gap:5px;width:44px;height:44px;
+    padding:8px;border:0;border-radius:50%;background:#0F1E36!important;
+    box-shadow:0 0 0 1px rgba(237,232,223,.18);cursor:pointer
+  }
+  .burger span{display:block;width:24px;height:2px;background:#EDE8DF!important;
+    border-radius:2px;transition:transform .25s ease,opacity .2s ease}
+  .burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+  header.nav.kosler-menu-active,.nav.kosler-menu-active,
+  header.nav.scrolled.kosler-menu-active,.nav.scrolled.kosler-menu-active{
+    background:#070F1C!important;background-image:none!important;
+    -webkit-backdrop-filter:none!important;backdrop-filter:none!important;
+    border-bottom-color:rgba(237,232,223,.12)!important;
+    z-index:2200!important
+  }
+
+  .nav-links{
+    display:flex!important;position:fixed!important;inset:0 0 0 auto!important;
+    width:min(84vw,350px)!important;height:100vh!important;height:100dvh!important;
+    min-height:100vh!important;flex-direction:column!important;align-items:stretch!important;
+    justify-content:center!important;gap:6px!important;padding:92px 30px 38px!important;
+    margin:0!important;overflow-y:auto!important;
+    background-color:#070F1C!important;
+    background-image:linear-gradient(#070F1C,#070F1C)!important;
+    -webkit-backdrop-filter:none!important;backdrop-filter:none!important;
+    opacity:1!important;isolation:isolate!important;
+    border-left:1px solid rgba(237,232,223,.18)!important;
+    box-shadow:-28px 0 70px rgba(0,0,0,.72)!important;
+    transform:translate3d(105%,0,0)!important;
+    transition:transform .32s cubic-bezier(.22,1,.36,1)!important;
+    z-index:2100!important;visibility:hidden!important
+  }
+  .nav-links::before{
+    content:""!important;position:absolute!important;inset:0!important;
+    background:#070F1C!important;opacity:1!important;z-index:-1!important;
+    pointer-events:none!important
+  }
+  .nav-links.open{
+    transform:translate3d(0,0,0)!important;visibility:visible!important
+  }
+  .nav-links a{
+    display:block!important;width:100%!important;padding:14px 4px!important;
+    color:#EDE8DF!important;font-size:1.04rem!important;line-height:1.25!important;
+    border-bottom:1px solid rgba(237,232,223,.11)!important
+  }
+  .nav-links a:last-child{border-bottom:0!important}
+
+  .kosler-menu-backdrop{
+    display:block;position:fixed;inset:0;z-index:2190;border:0;padding:0;
+    background:rgba(3,8,19,.78);-webkit-backdrop-filter:none;backdrop-filter:none;
+    opacity:0;visibility:hidden;pointer-events:none;cursor:pointer;
+    transition:opacity .25s ease,visibility .25s ease
+  }
+  .kosler-menu-backdrop.open{opacity:1;visibility:visible;pointer-events:auto}
+}
+
+@media (min-width:901px){
+  .burger[data-kosler-generated="true"]{display:none!important}
+}
