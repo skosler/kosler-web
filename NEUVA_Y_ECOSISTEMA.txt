@@ -7,7 +7,7 @@ Esta entrega incluye:
 - Accesos directos a 3Learn, NeuVA, SEEDMAX, Rómpela PAES y Coaching PAES 101.
 - Menú lateral móvil con fondo sólido y opaco en todas las páginas.
 - Estilos y funcionamiento del menú insertados dentro de cada HTML para evitar fallas por archivos externos o caché.
-- Ruta /neuva configurada en el archivo _redirects.
+- Ruta /neu-va/ construida como carpeta física con neu-va/index.html, sin redirecciones.
 
 PUBLICACIÓN EN GITHUB
 
@@ -17,5 +17,5 @@ Después de publicar, prueba el sitio en una ventana privada y revisa especialme
 
 1. El menú lateral desde un teléfono.
 2. La opción Ecosistema.
-3. La ruta https://kosler.cl/neuva
+3. La ruta https://kosler.cl/neu-va/
 4. Los formularios y botones principales.

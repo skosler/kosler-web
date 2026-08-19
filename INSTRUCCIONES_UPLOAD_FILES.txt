@@ -1,0 +1,28 @@
+REEMPLAZO COMPLETO DE KOSLER.CL DESDE GITHUB
+
+1. Abre la raíz del repositorio en GitHub.
+2. Selecciona Add file > Upload files.
+3. Descomprime el ZIP entregado.
+4. Abre la carpeta KOSLER_UPLOAD_FILES.
+5. Selecciona TODOS los archivos que contiene y arrástralos a Upload files.
+6. Confirma el reemplazo de index.html y los demás archivos coincidentes.
+7. Realiza el commit.
+
+Todos los archivos de esta versión están en un solo nivel. No hay carpetas que GitHub pueda omitir.
+
+Comprueba especialmente que aparezcan en GitHub:
+- index.html
+- insights.html (se abre públicamente como /insights)
+- los seis archivos insight-*.html (se abren sin la extensión .html)
+- coaching-paes-ciencias-101.html (se abre como /coaching-paes-ciencias-101)
+- sebastian.webp
+- _redirects
+- CNAME
+
+Los formularios permanecen conectados a Formspree:
+- Contacto general: mqpzyedw
+- Coaching 101: mzepjdaq
+
+El botón "Conocer el Modelo 3Learn" abre la página oficial adjunta:
+- Ruta pública: /3learn
+- Archivo: 3learn.html
