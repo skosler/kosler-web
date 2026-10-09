@@ -1,0 +1,209 @@
+/* Kosler: shared visual language for public pages, products and accounts. */
+:root {
+ --navy:#070f1c;--panel:#0f1e36;--line:rgba(237,232,223,.28);--blue:#e8622a;--cyan:#f2994a;--text:#ede8df;--muted:#b9b6ae;--good:#f2994a;
+ --background:#070f1c;--foreground:#ede8df;--card:#0f1e36;--card-foreground:#ede8df;--popover:#0b1628;--popover-foreground:#ede8df;--primary:#e8622a;--primary-foreground:#070f1c;--secondary:#16294a;--secondary-foreground:#ede8df;--muted-foreground:#b9b6ae;--border:rgba(237,232,223,.28);--input:#384459;--ring:#f2994a;
+ --orange:#e8622a;--amber:#f2994a;--cream:#ede8df;--cream-dim:#b9b6ae;--cream-faint:#7e8597;--line-strong:rgba(237,232,223,.48);--bg:#070f1c;--bg2:#0b1628;
+ --f-body:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;--f-display:var(--f-body);--f-accent:var(--f-body);--f-mono:var(--f-body);
+ --kosler-surface:linear-gradient(145deg,rgba(15,30,54,.94),rgba(11,22,40,.94));
+ --kosler-background:radial-gradient(circle at 15% 35%,rgba(237,232,223,.14),transparent 38%),radial-gradient(circle at 85% 30%,rgba(232,98,42,.12),transparent 34%),linear-gradient(135deg,#070f1c 0%,#0b1628 48%,#070f1c 100%);
+}
+html {background:#070f1c;scroll-padding-top:100px; color-scheme:dark}
+body {background:var(--kosler-background);background-attachment:fixed;color:#ede8df;font-family:var(--f-body);font-size:17px;line-height:1.7;isolation:isolate}
+body::before {content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background-image:radial-gradient(circle at 17% 24%,#f2994a35 0 1px,transparent 2px),radial-gradient(circle at 71% 64%,#e8622a2b 0 1px,transparent 2px),linear-gradient(35deg,transparent 49.85%,#38445909 50%,transparent 50.15%);background-size:147px 191px,227px 269px,260px 280px;opacity:.45}
+body::after {opacity:.025;pointer-events:none}
+body h1,body h2,body h3,body h4 {font-family:var(--f-body);color:#ede8df;line-height:1.15;letter-spacing:-.035em}
+body h1 {font-size:clamp(2.4rem,5vw,4.25rem)}
+body h2 {font-size:clamp(1.85rem,3.3vw,2.85rem)}
+body h3 {font-size:clamp(1.25rem,2vw,1.5rem)}
+body p {max-width:75ch}
+body :is(.lead,.intro,.sub,.hero-copy>p,.store-hero p,.home-hero-copy p,.kosler-hero-copy p) {color:#b9b6ae;font-size:clamp(1.05rem,1.3vw,1.18rem);line-height:1.75}
+body :is(.eyebrow,.kicker,.apps-eyebrow) {color:#f2994a;font-size:12px;letter-spacing:.16em}
+body :is(.hero h1 em,.apps-hero h1 em,.home-hero h1 em) {color:#e8622a;font-style:normal}
+body :is(.section,.band,.thesis,.final,.store-main,.platform-page,.kosler-apps-page) {background-color:transparent}
+body :is(.wrap,.nav-inner,.nav-in) {max-width:1300px}
+body :is(.card,.audience-card,.post,.creds,.proof,.pillar,.diagram,.feature,.method,.include,.apply,.authority,.fit,.faq details,.catalog-card,.home-course-card,.full-course,.info,.panel,.price-card,.setup-card,.account-card,.purchase-panel,.reader-account-card,.kosler-app-card,.book-card,.skills-card,.stage-card,.concept-panel,.lesson-card,.prompt-card,.apps-hero-mark,.plans-grid article,.library-grid>article) {
+ background:var(--kosler-surface);border:1px solid var(--line);border-radius:20px;box-shadow:0 20px 45px rgba(0,0,0,.28);transition:transform 200ms ease,border-color 200ms ease,box-shadow 200ms ease;
+}
+@media(hover:hover) {
+ body :is(.card,.audience-card,.post,.kosler-app-card,.book-card,.catalog-card,.home-course-card):hover {transform:translateY(-3px);border-color:rgba(237,232,223,.55);box-shadow:0 24px 50px #0005}
+}
+body :is(.card p,.audience-card p,.post p,.kosler-app-card p,.book-card p,.catalog-card p,.home-course-card p) {color:#b9b6ae}
+body :is(.iconbox,.app-icon) {width:54px;height:54px;border:1px solid var(--line);border-radius:14px;background:#16294a88;color:#e8622a}
+body :is(.iconbox,.app-icon) svg {width:26px;height:26px}
+body :is(.btn,.store-primary,.store-secondary,.cta-link,.secondary-link,.purchase-button,.nav-cta) {min-height:48px;border-radius:12px;line-height:1.35;transition:transform 200ms ease,box-shadow 200ms ease,filter 200ms ease;display:inline-flex;align-items:center;justify-content:center;gap:10px}
+body :is(.btn-primary,.store-primary,.cta-link,.purchase-button,.nav-cta) {background:linear-gradient(135deg,#e8622a,#f2994a);color:#070f1c;border:1px solid #e8622a;box-shadow:0 10px 28px rgba(232,98,42,.24);font-weight:700}
+body :is(.btn-ghost,.store-secondary,.secondary-link) {background:rgba(22,41,74,.72);color:#ede8df;border:1px solid rgba(237,232,223,.48)}
+@media(hover:hover) {body :is(.btn,.store-primary,.store-secondary,.cta-link,.secondary-link,.purchase-button):not(:disabled):hover {transform:translateY(-2px);filter:brightness(1.08);box-shadow:0 12px 30px #e8622a2b}}
+body :is(button,input,select,textarea) {font-family:var(--f-body)}
+body :is(input:not([type=checkbox]):not([type=radio]),textarea,select) {background:#0b1628;color:#ede8df;border-color:#38445980;border-radius:12px;font-size:16px;max-width:100%}
+body :is(button,a,input,select,textarea,summary):focus-visible {outline:2px solid #f2994a;outline-offset:4px}
+body :is(button:disabled,.course-locked-button) {cursor:not-allowed;transform:none;box-shadow:none;color:#b9b6ae}
+/* Navigation: identical rhythm and grouped ecosystem on every surface. */
+body header.nav,body header.nav.scrolled,body .site-header {background:rgba(7,15,28,.86);backdrop-filter:blur(18px);border-bottom:1px solid rgba(237,232,223,.22);z-index:2200}
+body .site-header {position:sticky;top:0;width:100%}
+body .site-header-inner,body header.nav :is(.nav-inner,.nav-in) {max-width:1300px;margin:auto;min-height:80px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 24px}
+body .site-brand {display:flex;align-items:center;gap:12px;color:#ede8df;flex-shrink:0;text-decoration:none}
+body .site-brand>span {width:40px;height:40px;display:grid;place-items:center;border:1px solid #38445980;border-radius:12px;color:#e8622a;font-weight:700;font-size:14px}
+body .site-brand b {font-size:14px;letter-spacing:.1em;display:flex;flex-direction:column;line-height:1.4}
+body .site-brand i {font-size:10px;font-style:normal;font-weight:500;color:#b9b6ae}
+body .site-header nav,body header.nav .nav-links {display:flex;align-items:center;gap:2px}
+body .site-header nav>a,body .site-header .eco-menu>summary,body header.nav .nav-links>a,body header.nav .eco-menu>summary {display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 13px;margin:0;font-size:14px;font-weight:500;color:#ede8df;line-height:1.25;border-radius:10px;border:0;white-space:nowrap;text-decoration:none;transition:background 180ms ease,color 180ms ease,box-shadow 180ms ease}
+body :is(.site-header,header.nav) nav>a::after {display:none}
+body :is(.site-header,header.nav) nav>a:hover,body :is(.site-header,header.nav) .eco-menu>summary:hover {color:#ede8df;background:rgba(237,232,223,.09);box-shadow:inset 0 -2px #f2994a60}
+body :is(.site-header,header.nav) nav>a.active,body :is(.site-header,header.nav) nav>a[aria-current=page],body :is(.site-header,header.nav) .eco-menu[open]>summary,body .site-header .eco-menu>summary.active {color:#f2994a;background:#f2994a14;box-shadow:inset 0 -2px #e8622a}
+body :is(.site-header,header.nav) nav>a.nav-cta {padding:12px 16px!important;background:linear-gradient(135deg,#e8622a,#f2994a);color:#070f1c;border-radius:12px;box-shadow:0 10px 28px #ff8b3029}
+body .eco-menu {position:relative;align-self:center}
+body .eco-menu>summary {cursor:pointer;list-style:none;gap:8px}
+body .eco-menu>summary::-webkit-details-marker {display:none}
+body .eco-menu>summary::after {content:"";width:7px;height:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin-top:-4px}
+body .eco-menu[open]>summary::after {transform:rotate(225deg);margin-top:4px}
+body :is(.site-header,header.nav) .eco-panel {position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);width:400px;max-width:calc(100vw - 40px);max-height:calc(100dvh - 110px);overflow:auto;overscroll-behavior:contain;background:rgba(11,22,40,.97);border:1px solid rgba(237,232,223,.48);border-radius:20px;box-shadow:0 28px 70px #0008;backdrop-filter:blur(22px);padding:14px;z-index:2300}
+body .eco-group h2 {font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.13em;color:#e8622a;line-height:1.5;margin:4px 10px 10px}
+body .eco-group.technology {border-top:1px solid var(--line);margin-top:10px;padding-top:14px}
+body .eco-group.technology h2 {color:#f2994a}
+body :is(.site-header,header.nav) .eco-panel a {display:flex;align-items:center;gap:14px;min-height:72px;padding:9px 10px;border-radius:12px;color:#ede8df;text-decoration:none;line-height:1.35;white-space:normal;font-size:16px;transition:background 180ms ease}
+body :is(.site-header,header.nav) .eco-panel a:hover {background:rgba(237,232,223,.09)}
+body .eco-panel .eco-icon {display:grid;place-items:center;flex:0 0 54px;width:54px;height:54px;border-radius:14px;background:#16294a;border:1px solid #56a4cf38;color:#e8622a}
+body .eco-panel .technology .eco-icon {color:#f2994a}
+body .eco-copy {min-width:0}
+body .eco-copy b {font-size:16px;font-weight:600;letter-spacing:0}
+body :is(.site-header,header.nav) .eco-panel small {display:block;color:#b9b6ae;font-size:15px;line-height:1.4;margin:4px 0 0}
+body .site-menu {display:none;width:48px;height:48px;align-items:center;justify-content:center;background:#16294a;color:#ede8df;border:1px solid var(--line);border-radius:12px}
+/* Portrait lighting stays around the silhouette, away from the face. */
+body .hero {background:transparent}
+body .hero-grid {grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:64px}
+body .hero h1 {font-size:clamp(3rem,5.2vw,4.25rem);line-height:1.05}
+body .hero-portrait {border:0;background:transparent;border-radius:32px;box-shadow:-22px 10px 70px #f2994a12,24px 10px 70px #e8622a1a;overflow:hidden}
+body .hero-portrait img {width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center;filter:none;border-radius:32px;mask-image:linear-gradient(to bottom,#000 82%,transparent 100%)}
+body .hero-portrait::before {content:"";inset:0;height:auto;background:linear-gradient(90deg,#f2994a20,transparent 18%,transparent 85%,#e8622a23);z-index:1;pointer-events:none}
+body .hero-portrait::after {background:linear-gradient(90deg,#0b16289c,transparent 18%,transparent 86%,#0b16288c),linear-gradient(0deg,#0b1628,transparent 20%);inset:0;z-index:2;pointer-events:none}
+body #neural {opacity:.4;pointer-events:none}
+body .hero-cta {display:flex;gap:12px;flex-wrap:wrap}
+body :is(.apps-hero-mark,.hero-visual,.diagram) {background:radial-gradient(circle at 25% 30%,#f2994a12,transparent 60%),var(--kosler-surface)}
+body :is(.foot,footer.store-footer,.platform-footer) {background:rgba(2,11,22,.6);border-top:1px solid var(--line)}
+@media(max-width:1100px) {
+ body .site-menu {display:flex;flex-shrink:0;position:relative;z-index:2301}
+ body .site-header nav {position:fixed;top:0;right:0;width:min(100%,430px);height:100dvh;max-height:100dvh;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:4px;padding:90px 22px 30px;overflow:auto;background:#0b1628;box-shadow:-20px 0 60px #0008;transform:translateX(105%);visibility:hidden;transition:transform 220ms ease,visibility 220ms ease;z-index:2300}
+ body .site-header nav.open {transform:none;visibility:visible}
+ body .site-header nav>a,body .site-header .eco-menu>summary {width:100%;justify-content:flex-start;white-space:normal}
+ body .site-header .eco-menu {width:100%;align-self:stretch}
+ body .site-header .eco-menu>summary::after {margin-left:auto}
+ body .site-header .eco-panel {position:static;transform:none;width:100%;max-height:none;max-width:none;margin:8px 0;box-shadow:none;padding:8px}
+ body .site-header nav>a.nav-cta {justify-content:center;margin-top:10px}
+}
+@media(max-width:1100px) {
+ body header.nav .nav-links {background:#0b1628;width:min(100%,430px);gap:4px;align-items:stretch;max-height:100dvh}
+ body header.nav .eco-menu {width:100%;align-self:stretch}
+ body header.nav .nav-links>a,body header.nav .eco-menu>summary {width:100%;justify-content:flex-start;white-space:normal;padding:12px}
+ body header.nav .eco-panel {position:static;transform:none;width:100%;max-width:none;max-height:none;margin:8px 0;box-shadow:none;padding:8px}
+ body .hero-grid {grid-template-columns:minmax(0,1fr);gap:38px}
+ body .hero-portrait {width:min(100%,420px);margin-inline:auto;order:2}
+ body .hero-copy {order:1}
+ body .hero {padding-top:120px;padding-bottom:60px}
+}
+@media(max-width:600px) {
+ body {font-size:17px;background-attachment:scroll}
+ body :is(.site-header-inner,header.nav .nav-inner,header.nav .nav-in) {padding-inline:20px}
+ body .eco-panel .eco-icon {flex-basis:48px;width:48px;height:48px}
+ body .eco-panel a {gap:10px}
+ body .eco-copy b {font-size:15px}
+ body :is(.site-header,header.nav) .eco-panel small {font-size:15px}
+ body :is(.wrap) {padding-inline:22px}
+ body :is(.card,.kosler-app-card,.reader-account-card) {padding:24px}
+ body .hero-cta>a {width:100%}
+ body :is(.cards-3,.cards-2,.audience-grid,.kosler-apps-grid,.book-grid,.catalog,.proof-grid,.three) {grid-template-columns:minmax(0,1fr)}
+ body :is(.hero h1,.store-hero h1,.detail-hero h1,.apps-hero h1,.platform-title h1) {font-size:clamp(2.3rem,10vw,3rem);line-height:1.12}
+ body .hero-portrait {max-width:360px}
+}
+@media(prefers-reduced-motion:reduce) {
+ html {scroll-behavior:auto}
+ body *,body *::before,body *::after {animation:none!important;transition:none!important}
+ body .reveal {opacity:1;transform:none}
+}
+:root {--navy-900:#070f1c;--navy-800:#0b1628;--navy-700:#0f1e36;--navy-600:#16294a;--amber-soft:#f2994a24}
+body :is(.home-hero,.home-section,.home-cta,.site-home,.plans-page,.dashboard-pro,.store-hero,.store-section) {background-color:transparent}
+body :is(.home-model-grid>article,.home-route-copy>div,.dashboard-event,.next-mission,.progress-summary,.profile-panel,.contact-panel) {background:var(--kosler-surface);border:1px solid var(--line);border-radius:20px;box-shadow:0 20px 45px #0004}
+body :is(.ico,.home-course-icon) {color:#f2994a}
+body :is(.home-hero h1,.course-hero h1,.detail-hero h1,.store-hero h1,.reader-account-page h1) {font-size:clamp(2.5rem,5vw,4.25rem);line-height:1.1}
+body .home-orbit-core {background:radial-gradient(circle at 35% 30%,#16294a,#0f1e36 70%);border-color:#f2994a70;box-shadow:0 0 65px #f2994a1f}
+body .home-orbit-ring {border-color:#f2994a30}
+body .home-orbit-label {background:#0f1e36db;border-color:#3844594d;color:#b9b6ae}
+body .home-orbit-core>svg {color:#f2994a}
+body .site-footer {background:#070f1c80;border-top:1px solid var(--line)}
+body .reader-shell {background:var(--kosler-background);color:#ede8df}
+body .reader-top {background:rgba(3,13,24,.92);border-color:var(--line);backdrop-filter:blur(18px);color:#ede8df}
+body .reader-paper {color:#172435;background:#ede8df;color-scheme:light}
+body .reader-paper h2 {color:#172435}
+body .reader-night .reader-paper {color:#ede8df;background:#0f1e36;border-color:var(--line)}
+body .reader-night .reader-paper h2 {color:#ede8df}
+body .reader-top :is(a,button),body .reader-pagination button {color:#ede8df;border-color:#38445980}
+body .reader-layout nav .active {background:#16294a;color:#f2994a}
+@media(max-width:600px) {body :is(.home-hero h1,.course-hero h1,.detail-hero h1,.store-hero h1,.reader-account-page h1) {font-size:clamp(2.3rem,10vw,3rem)}}
+body .card-icon {display:grid;place-items:center;width:54px;height:54px;border-radius:14px;background:#16294a88;border:1px solid var(--line);color:#f2994a;margin-bottom:20px}
+body .kosler-app-preview .card-icon,body .academy-course .card-icon {color:#e8622a}
+body :is(.site-header,header.nav) .eco-menu>summary.active {color:#e8622a;background:#e8622a14;box-shadow:inset 0 -2px #e8622a}
+body::after {content:"";position:fixed;inset:0;z-index:2400;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");mix-blend-mode:overlay}
+/* Animated neural intelligence silhouette, shared across the full ecosystem. */
+body #kosler-neural-backdrop {position:fixed;inset:0;width:100%;height:100%;max-width:none;pointer-events:none;z-index:-1;opacity:.66}
+body::before {opacity:.18}
+body {color:#ede8df}
+body :is(h1,h2,h3,h4) {color:#ede8df}
+body .eco-panel a {color:#ede8df}
+body .hero::after {background:linear-gradient(180deg,rgba(7,15,28,.03),rgba(7,15,28,.1) 70%,rgba(7,15,28,.36))}
+body .hero-portrait::after {background:linear-gradient(90deg,#0b16289c,transparent 18%,transparent 86%,#0b16288c),linear-gradient(0deg,#0b1628,transparent 20%)}
+@media(max-width:600px){body #kosler-neural-backdrop{opacity:.42}}
+@media(prefers-reduced-motion:reduce){body #kosler-neural-backdrop{opacity:.48}}
+/* Palette sampled directly from the current public kosler.cl source. */
+:root {
+ --navy:#0b1628;--panel:#0f1e36;--navy-900:#070f1c;--navy-800:#0b1628;--navy-700:#0f1e36;--navy-600:#16294a;
+ --background:#0b1628;--foreground:#ede8df;--text:#ede8df;--cream:#ede8df;--muted:#b9b6ae;--cream-dim:#b9b6ae;--cream-faint:#7e8597;
+ --orange:#e8622a;--amber:#f2994a;--cyan:#f2994a;--blue:#e8622a;--line:rgba(237,232,223,.10);--line-strong:rgba(237,232,223,.20);--border:rgba(237,232,223,.20);
+ --kosler-background:radial-gradient(circle at 85% 15%,rgba(232,98,42,.14),transparent 38%),radial-gradient(circle at 15% 55%,rgba(22,41,74,.4),transparent 45%),linear-gradient(135deg,#0b1628,#070f1c);
+ --kosler-surface:linear-gradient(145deg,rgba(15,30,54,.94),rgba(11,22,40,.94));
+}
+body .hero-portrait::after {background:linear-gradient(90deg,#0b16289c,transparent 18%,transparent 86%,#0b16288c),linear-gradient(0deg,#0b1628,transparent 20%)}
+
+/* Consistent social link across public and Academy/store footers. */
+body footer .footer-instagram{display:inline-flex;align-items:center;gap:9px;min-height:44px;max-width:100%;color:var(--kosler-text,#ede8df);font-size:14px;line-height:1.5;text-decoration:none}
+body footer .footer-instagram svg{flex:0 0 18px}
+body footer .footer-instagram:hover{color:#f2994a}
+body footer .footer-instagram:focus-visible{outline:2px solid #f2994a;outline-offset:4px;border-radius:4px}
+body .site-footer{flex-wrap:wrap;gap:16px}
+@media(max-width:600px){body footer .footer-instagram{width:fit-content}}
+body footer .foot{flex-wrap:wrap}
+
+/* Mockup art direction: photographic neural depth, navy, ivory and amber. */
+:root{
+ --kosler-background:linear-gradient(135deg,#070f1c,#0b1628 48%,#070f1c);
+ --kosler-surface:linear-gradient(145deg,rgba(18,36,59,.95),rgba(9,21,38,.95));
+ --line:rgba(120,147,170,.26);--line-strong:rgba(242,153,74,.45);--border:rgba(120,147,170,.26);
+}
+body::before{
+ background-image:linear-gradient(90deg,rgba(7,15,28,.45),rgba(7,15,28,.15)),url('/images/kosler-neural-hyperrealistic.png');
+ background-size:cover;background-position:center;opacity:.42;
+}
+body h1{font-size:clamp(2.55rem,5.2vw,4.75rem);font-weight:750;line-height:1.06;letter-spacing:-.045em}
+body h2{font-size:clamp(2rem,3.65vw,3.45rem);font-weight:700;line-height:1.12}
+body :is(.hero-copy,.home-hero-copy,.store-hero,.apps-hero>div:first-child){position:relative;z-index:2}
+body :is(.btn-primary,.store-primary,.cta-link,.purchase-button,.nav-cta){background:linear-gradient(135deg,#dc5627,#ee7e34);color:#fff7ed;border-color:rgba(255,179,106,.32);box-shadow:0 10px 28px rgba(232,98,42,.24)}
+body :is(.site-header,header.nav) nav>a.nav-cta{background:linear-gradient(135deg,#dc5627,#ee7e34);color:#fff7ed}
+body :is(.btn-ghost,.store-secondary,.secondary-link){background:rgba(12,27,46,.86);border-color:rgba(120,147,170,.42)}
+body :is(.hero-visual,.home-model-grid>article,.home-route-step,.learning-record>article,.metric-row>div,.account-card,.plans-grid article){background:var(--kosler-surface);border:1px solid var(--line);border-radius:20px;box-shadow:0 20px 50px #0004}
+body :is(.site-header,header.nav) .eco-panel{background:rgba(10,24,41,.97);border-color:rgba(120,147,170,.4)}
+body .kosler-brain-art{display:block;width:100%;height:auto;max-height:280px;object-fit:contain;margin:-12px auto 20px;filter:drop-shadow(0 12px 28px #f2994a16)}
+body .academy-neural-art{width:100%;margin:0;position:relative;min-width:0;isolation:isolate}
+body .academy-neural-art::before{content:"";position:absolute;inset:8% 0;z-index:-1;background:radial-gradient(ellipse,#f2994a20,transparent 68%);filter:blur(28px)}
+body .academy-neural-art>img{display:block;width:100%;height:auto;filter:drop-shadow(0 20px 35px #0005)}
+body .academy-neural-art figcaption{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px 20px;padding:18px 20px;background:rgba(9,23,40,.82);border:1px solid var(--line);border-radius:16px;backdrop-filter:blur(12px)}
+body .academy-neural-art figcaption b{width:100%;text-align:center;color:#f2994a;font-size:13px;letter-spacing:.16em}
+body .academy-neural-art figcaption span{display:flex;align-items:center;gap:8px;font-size:14px;color:#ede8df}
+body .academy-neural-art figcaption svg{width:18px;height:18px;color:#f2994a}
+body .apps-logo-mark{background:transparent;border:0;box-shadow:none}
+body :is(.store-footer,.site-footer,footer.footer){background:rgba(7,15,28,.85);border-top:1px solid var(--line)}
+@media(max-width:800px){
+ body::before{background-position:65% center;opacity:.28}
+ body .academy-neural-art{max-width:580px;margin:0 auto}
+ body .kosler-brain-art{max-height:220px}
+ body .hero h1{font-size:clamp(2.5rem,8vw,3.6rem)}
+}
+@media(prefers-reduced-motion:reduce){body .academy-neural-art,body .kosler-brain-art{animation:none}}

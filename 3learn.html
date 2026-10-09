@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
 <!-- ============ SEO ============ -->
 <title>Modelo 3Learn: cognición, emoción y cuerpo | Kosler</title>
@@ -28,359 +28,17 @@
 <!-- ============ Tipografías ============ -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Instrument+Sans:wght@400..700&family=JetBrains+Mono:wght@400;500;600&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
 
-<style>
-/* =========================================================
-   MODELO 3LEARN — mismo sistema de diseño que kosler.cl
-   ========================================================= */
-:root{
-  --navy-900:#070F1C;
-  --navy-800:#0B1628;
-  --navy-700:#0F1E36;
-  --navy-600:#16294A;
-  --line:rgba(237,232,223,.10);
-  --line-strong:rgba(237,232,223,.20);
 
-  --cream:#EDE8DF;
-  --cream-dim:#B9B6AE;
-  --cream-faint:#7E8597;
-
-  --orange:#E8622A;
-  --amber:#F2994A;
-  --amber-soft:rgba(242,153,74,.14);
-
-  --maxw:1240px;
-  --gut:clamp(20px,5vw,64px);
-
-  --f-display:"Bricolage Grotesque",system-ui,sans-serif;
-  --f-body:"Instrument Sans",system-ui,sans-serif;
-  --f-mono:"JetBrains Mono",monospace;
-  --f-accent:"Syne",system-ui,sans-serif;
-
-  --ease:cubic-bezier(.22,.61,.36,1);
-}
-
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{
-  font-family:var(--f-body);
-  background:var(--navy-800);
-  color:var(--cream);
-  line-height:1.65;
-  font-weight:400;
-  overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
-}
-::selection{background:var(--orange);color:#fff}
-:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:4px}
-a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-
-body::after{
-  content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;
-  opacity:.035;mix-blend-mode:overlay;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-h1,h2,h3,h4{font-family:var(--f-display);font-weight:560;line-height:1.05;letter-spacing:-.022em}
-h2{font-size:clamp(2rem,5vw,3.4rem)}
-h3{font-size:clamp(1.3rem,2.4vw,1.7rem);line-height:1.18}
-p{color:var(--cream-dim);max-width:62ch}
-
-.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gut)}
-.section{position:relative;padding:clamp(80px,12vh,150px) 0}
-
-.eyebrow{
-  font-family:var(--f-accent);font-size:.78rem;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--amber);
-  display:inline-flex;align-items:center;gap:14px;margin-bottom:26px;font-weight:700;
-}
-.eyebrow::before{content:"";width:34px;height:1px;background:var(--orange);display:inline-block}
-
-.lead{font-size:clamp(1.05rem,1.5vw,1.22rem);color:var(--cream-dim);max-width:60ch;margin-top:22px}
-
-/* =================== NAV =================== */
-header.nav{
-  position:fixed;top:0;left:0;right:0;z-index:1000;
-  transition:background .4s var(--ease),border-color .4s var(--ease),backdrop-filter .4s;
-  border-bottom:1px solid transparent;
-}
-header.nav.scrolled{
-  background:rgba(7,15,28,.72);
-  backdrop-filter:blur(14px) saturate(140%);
-  border-bottom:1px solid var(--line);
-}
-.nav-inner{max-width:var(--maxw);margin-inline:auto;padding:18px var(--gut);
-  display:flex;align-items:center;justify-content:space-between;gap:24px}
-.brand{display:flex;align-items:center;gap:12px;font-family:var(--f-display);
-  font-size:1.18rem;letter-spacing:-.01em;font-weight:500}
-.brand .dot{width:11px;height:11px;border-radius:50%;
-  background:radial-gradient(circle at 30% 30%,var(--amber),var(--orange));
-  box-shadow:0 0 16px var(--orange)}
-.nav-links{display:flex;gap:30px;align-items:center}
-.nav-links a{font-size:.85rem;color:var(--cream-dim);letter-spacing:.01em;
-  position:relative;transition:color .25s;padding:4px 0}
-.nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1px;
-  background:var(--orange);transition:width .3s var(--ease)}
-.nav-links a:hover{color:var(--cream)}
-.nav-links a:hover::after{width:100%}
-.nav-cta{border:1px solid var(--line-strong);padding:9px 18px !important;border-radius:100px;
-  color:var(--cream)!important;transition:all .3s var(--ease)}
-.nav-cta:hover{background:var(--orange);border-color:var(--orange)}
-.nav-cta::after{display:none}
-.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
-.burger span{width:24px;height:2px;background:var(--cream);transition:.3s}
-
-/* =================== BOTONES =================== */
-.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-body);
-  font-size:.92rem;font-weight:500;padding:14px 26px;border-radius:100px;
-  cursor:pointer;transition:all .3s var(--ease);border:1px solid transparent;letter-spacing:.005em}
-.btn .arr{transition:transform .3s var(--ease)}
-.btn:hover .arr{transform:translateX(4px)}
-.btn-primary{background:var(--orange);color:#fff;box-shadow:0 8px 30px -10px rgba(232,98,42,.7)}
-.btn-primary:hover{background:var(--amber);transform:translateY(-2px);box-shadow:0 14px 40px -12px rgba(232,98,42,.85)}
-.btn-ghost{border-color:var(--line-strong);color:var(--cream)}
-.btn-ghost:hover{border-color:var(--cream);background:rgba(237,232,223,.05);transform:translateY(-2px)}
-
-/* =================== HERO =================== */
-.hero{position:relative;min-height:92vh;display:flex;align-items:center;
-  padding-top:90px;overflow:hidden}
-.hero::before{
-  content:"";position:absolute;z-index:1;width:60vw;height:60vw;right:-15vw;top:-10vw;
-  background:radial-gradient(circle,rgba(232,98,42,.16),transparent 60%);pointer-events:none}
-.hero::after{
-  content:"";position:absolute;z-index:1;width:44vw;height:44vw;left:-14vw;bottom:-16vw;
-  background:radial-gradient(circle,rgba(242,153,74,.10),transparent 60%);pointer-events:none}
-.hero-inner{position:relative;z-index:2;width:100%;display:grid;grid-template-columns:1.08fr .92fr;
-  gap:clamp(42px,6vw,88px);align-items:center}
-.hero h1{font-size:clamp(2.9rem,7vw,5.6rem);font-weight:620;letter-spacing:-.038em;line-height:.98}
-.hero h1 span{color:var(--amber)}
-.hero .sub{font-family:var(--f-accent);font-size:clamp(.92rem,1.6vw,1.12rem);
-  color:var(--amber);letter-spacing:.005em;margin:26px 0 22px;font-weight:600}
-.hero .intro{font-size:clamp(1rem,1.4vw,1.18rem);color:var(--cream-dim);max-width:58ch}
-.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px}
-.hero-visual{border:1px solid rgba(242,153,74,.3);border-radius:24px;padding:clamp(24px,3vw,36px);
-  background:linear-gradient(155deg,rgba(22,41,74,.95),rgba(11,22,40,.92));box-shadow:0 30px 80px -34px #000}
-.hero-visual .visual-label{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cream-faint)}
-.hero-layer{display:grid;grid-template-columns:42px 1fr;gap:16px;align-items:center;margin-top:16px;padding:17px 18px;
-  border:1px solid var(--line);border-radius:14px;background:rgba(7,15,28,.55)}
-.hero-layer .mark{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-family:var(--f-accent);font-weight:800;
-  color:var(--amber);background:var(--amber-soft)}
-.hero-layer strong{display:block;color:var(--cream);font-family:var(--f-display);font-weight:560}
-.hero-layer span{font-size:.82rem;color:var(--cream-faint)}
-.hero-result{margin-top:20px;padding-top:20px;border-top:1px solid var(--line);font-family:var(--f-accent);font-size:.78rem;
-  letter-spacing:.1em;text-transform:uppercase;color:var(--amber);text-align:center}
-
-/* =================== CARDS =================== */
-.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(34px,5vw,64px);align-items:center}
-.cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:50px}
-.card{background:var(--navy-700);border:1px solid var(--line);border-radius:18px;
-  padding:32px 30px;transition:transform .4s var(--ease),border-color .4s,background .4s;position:relative;overflow:hidden}
-.card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 100% 0%,var(--amber-soft),transparent 50%);
-  opacity:0;transition:opacity .4s}
-.card:hover{transform:translateY(-6px);border-color:var(--line-strong);background:var(--navy-600)}
-.card:hover::before{opacity:1}
-.card .ix{font-family:var(--f-accent);font-weight:700;font-size:.76rem;color:var(--orange);
-  letter-spacing:.12em;margin-bottom:18px;display:block;text-transform:uppercase}
-.card h3{margin-bottom:12px;font-size:1.22rem}
-.card p{font-size:.95rem;max-width:none}
-.card .ico{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;margin-bottom:22px;
-  background:var(--amber-soft);color:var(--amber)}
-.card .ico svg{width:24px;height:24px}
-
-/* =================== DIAGRAMA DE PILARES =================== */
-.diagram{border:1px solid rgba(242,153,74,.26);border-radius:22px;padding:clamp(28px,4vw,44px);
-  background:radial-gradient(circle at 50% 0%,rgba(242,153,74,.12),transparent 45%),var(--navy-700)}
-.diagram .dtitle{text-align:center;margin-bottom:30px}
-.diagram .dtitle strong{font-family:var(--f-accent);font-weight:800;font-size:clamp(2rem,4vw,2.8rem);
-  color:var(--amber);letter-spacing:-.02em;display:block}
-.diagram .dtitle p{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--cream-faint);max-width:none;margin-top:10px}
-.pillar{display:grid;grid-template-columns:46px 1fr;gap:20px;align-items:center;
-  padding:20px 24px;border-radius:14px;margin-bottom:14px;background:var(--navy-800);
-  border:1px solid var(--line);transition:.35s var(--ease)}
-.pillar:hover{border-color:var(--orange);transform:translateX(6px)}
-.pillar .ico{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;
-  background:var(--amber-soft);color:var(--amber)}
-.pillar .ico svg{width:24px;height:24px}
-.pillar h3{font-size:1.1rem;margin-bottom:2px}
-.pillar p{font-size:.9rem;max-width:none;color:var(--cream-faint)}
-.diagram .flow{text-align:center;font-family:var(--f-accent);font-weight:700;font-size:.78rem;
-  letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-top:24px;
-  display:flex;align-items:center;justify-content:center;gap:14px}
-.diagram .flow::before,.diagram .flow::after{content:"";width:34px;height:1px;background:var(--orange)}
-
-/* =================== MOMENTOS =================== */
-.mh{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--cream-faint);margin-bottom:30px}
-.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
-.steps::before{content:"";position:absolute;top:19px;left:5%;right:5%;height:1px;
-  background:linear-gradient(90deg,var(--orange),var(--amber));opacity:.4}
-.step{position:relative;padding-right:18px}
-.step .num{width:40px;height:40px;border-radius:50%;background:var(--navy-800);border:1px solid var(--orange);
-  display:grid;place-items:center;font-family:var(--f-accent);font-weight:700;font-size:.9rem;color:var(--amber);
-  margin-bottom:18px;position:relative;z-index:2}
-.step h4{font-family:var(--f-display);font-size:1.02rem;font-weight:500;line-height:1.25;color:var(--cream)}
-
-/* =================== BANDAS DE CITA =================== */
-.band{background:
-   radial-gradient(circle at 85% 15%,rgba(232,98,42,.16),transparent 45%),
-   var(--navy-900)}
-.band .big{font-family:var(--f-display);font-size:clamp(1.6rem,3.6vw,2.7rem);line-height:1.18;
-  max-width:28ch;font-weight:540;letter-spacing:-.025em;color:var(--cream)}
-.band .big b{color:var(--amber);font-weight:540}
-.band .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:36px}
-
-/* =================== FOOTER =================== */
-footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 0 40px}
-.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
-.foot-brand p{font-size:.9rem;max-width:34ch;margin-top:14px}
-.foot-col h5{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--cream-faint);margin-bottom:18px;font-weight:500}
-.foot-col a{display:block;font-size:.92rem;color:var(--cream-dim);padding:6px 0;transition:color .25s}
-.foot-col a:hover{color:var(--orange)}
-.foot-bottom{margin-top:50px;padding-top:26px;border-top:1px solid var(--line);
-  display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;
-  font-size:.8rem;color:var(--cream-faint);font-family:var(--f-mono);letter-spacing:.03em}
-
-/* =================== REVEAL =================== */
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
-.reveal.in{opacity:1;transform:none}
-[data-d="1"]{transition-delay:.08s}[data-d="2"]{transition-delay:.16s}
-[data-d="3"]{transition-delay:.24s}[data-d="4"]{transition-delay:.32s}[data-d="5"]{transition-delay:.4s}
-
-/* =================== RESPONSIVE =================== */
-@media(max-width:1000px){
-  .hero-inner,.grid-2{grid-template-columns:1fr}
-  .hero-visual{max-width:640px}
-  .cards-3{grid-template-columns:1fr 1fr}
-  .steps{grid-template-columns:1fr 1fr;gap:30px}.steps::before{display:none}
-  .foot-grid{grid-template-columns:1fr 1fr}
-}
-@media(max-width:680px){
-  .nav-links{position:fixed;inset:0 0 0 auto;width:min(80vw,320px);background:#070F1C!important;
-    flex-direction:column;justify-content:center;gap:26px;padding:40px;transform:translateX(100%);
-    transition:transform .4s var(--ease);border-left:1px solid rgba(237,232,223,.18);z-index:1001;
-    opacity:1;backdrop-filter:none;box-shadow:-24px 0 60px rgba(0,0,0,.55)}
-  .nav-links.open{transform:none}
-  .nav-links a{font-size:1.05rem}
-  .burger{display:flex;z-index:1002}
-  .cards-3,.steps{grid-template-columns:1fr}
-  .foot-grid{grid-template-columns:1fr}
-}
-@media(prefers-reduced-motion:reduce){
-  *{animation:none!important;scroll-behavior:auto!important}
-  .reveal{opacity:1;transform:none}
-}
-</style>
 <!-- KOSLER_MENU_INLINE_V4_20260819 -->
-<style id="kosler-mobile-menu-inline">
-/* Menú móvil global de kosler.cl — fondo realmente opaco */
-.kosler-menu-backdrop{display:none}
+<!-- KOSLER_ECOSYSTEM_MENU_V1 -->
 
-@media (max-width:900px){
-  body.kosler-menu-open{overflow:hidden!important;touch-action:none}
 
-  .burger{
-    display:flex!important;position:relative;z-index:2101;flex-direction:column;
-    justify-content:center;align-items:center;gap:5px;width:44px;height:44px;
-    padding:8px;border:0;border-radius:50%;background:#0F1E36!important;
-    box-shadow:0 0 0 1px rgba(237,232,223,.18);cursor:pointer
-  }
-  .burger span{display:block;width:24px;height:2px;background:#EDE8DF!important;
-    border-radius:2px;transition:transform .25s ease,opacity .2s ease}
-  .burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-  .burger[aria-expanded="true"] span:nth-child(2){opacity:0}
-  .burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-
-  header.nav.kosler-menu-active,.nav.kosler-menu-active,
-  header.nav.scrolled.kosler-menu-active,.nav.scrolled.kosler-menu-active{
-    background:#070F1C!important;background-image:none!important;
-    -webkit-backdrop-filter:none!important;backdrop-filter:none!important;
-    border-bottom-color:rgba(237,232,223,.12)!important;
-    z-index:2200!important
-  }
-
-  .nav-links{
-    display:flex!important;position:fixed!important;inset:0 0 0 auto!important;
-    width:min(84vw,350px)!important;height:100vh!important;height:100dvh!important;
-    min-height:100vh!important;flex-direction:column!important;align-items:stretch!important;
-    justify-content:center!important;gap:6px!important;padding:92px 30px 38px!important;
-    margin:0!important;overflow-y:auto!important;
-    background-color:#070F1C!important;
-    background-image:linear-gradient(#070F1C,#070F1C)!important;
-    -webkit-backdrop-filter:none!important;backdrop-filter:none!important;
-    opacity:1!important;isolation:isolate!important;
-    border-left:1px solid rgba(237,232,223,.18)!important;
-    box-shadow:-28px 0 70px rgba(0,0,0,.72)!important;
-    transform:translate3d(105%,0,0)!important;
-    transition:transform .32s cubic-bezier(.22,1,.36,1)!important;
-    z-index:2100!important;visibility:hidden!important
-  }
-  .nav-links::before{
-    content:""!important;position:absolute!important;inset:0!important;
-    background:#070F1C!important;opacity:1!important;z-index:-1!important;
-    pointer-events:none!important
-  }
-  .nav-links.open{
-    transform:translate3d(0,0,0)!important;visibility:visible!important
-  }
-  .nav-links a{
-    display:block!important;width:100%!important;padding:14px 4px!important;
-    color:#EDE8DF!important;font-size:1.04rem!important;line-height:1.25!important;
-    border-bottom:1px solid rgba(237,232,223,.11)!important
-  }
-  .nav-links a:last-child{border-bottom:0!important}
-
-  .kosler-menu-backdrop{
-    display:block;position:fixed;inset:0;z-index:2190;border:0;padding:0;
-    background:rgba(3,8,19,.78);-webkit-backdrop-filter:none;backdrop-filter:none;
-    opacity:0;visibility:hidden;pointer-events:none;cursor:pointer;
-    transition:opacity .25s ease,visibility .25s ease
-  }
-  .kosler-menu-backdrop.open{opacity:1;visibility:visible;pointer-events:auto}
-}
-
-@media (min-width:901px){
-  .burger[data-kosler-generated="true"]{display:none!important}
-}
-
-</style><!-- KOSLER_ECOSYSTEM_MENU_V1 -->
-<style id="kosler-ecosystem-menu-inline">
-/* Navegación global del ecosistema Kosler */
-.eco-menu{position:relative}
-.eco-menu summary{display:flex;align-items:center;gap:7px;list-style:none;cursor:pointer;
-  color:#B9B6AE;font-size:.86rem;line-height:1.2;white-space:nowrap;user-select:none}
-.eco-menu summary::-webkit-details-marker{display:none}
-.eco-menu summary::after{content:"⌄";color:#F2994A;font-size:.8rem;transition:transform .2s ease}
-.eco-menu[open] summary{color:#EDE8DF}
-.eco-menu[open] summary::after{transform:rotate(180deg)}
-.eco-panel{position:absolute;top:calc(100% + 18px);left:50%;transform:translateX(-50%);
-  width:270px;padding:10px;background:#070F1C;border:1px solid rgba(237,232,223,.18);
-  border-radius:15px;box-shadow:0 24px 60px rgba(0,0,0,.62);z-index:2300}
-.eco-panel::before{content:"";position:absolute;left:50%;top:-7px;width:12px;height:12px;
-  transform:translateX(-50%) rotate(45deg);background:#070F1C;
-  border-left:1px solid rgba(237,232,223,.18);border-top:1px solid rgba(237,232,223,.18)}
-.eco-panel a{display:block!important;padding:11px 13px!important;border-radius:9px!important;
-  color:#B9B6AE!important;font-size:.88rem!important;line-height:1.25!important}
-.eco-panel a:hover{background:#0F1E36!important;color:#EDE8DF!important}
-.eco-panel small{display:block;color:#7E8597;font-size:.7rem;margin-top:3px}
-
-@media(max-width:900px){
-  .eco-menu{width:100%}
-  .eco-menu summary{width:100%;padding:14px 4px;color:#EDE8DF;font-size:1.04rem;
-    border-bottom:1px solid rgba(237,232,223,.11)}
-  .eco-menu summary::after{margin-left:auto;margin-right:4px}
-  .eco-panel{position:static;width:100%;transform:none;margin:5px 0 8px;padding:6px;
-    background:#0B1628;border-radius:11px;box-shadow:none}
-  .eco-panel::before{display:none}
-  .eco-panel a{padding:11px 14px!important;border-bottom:1px solid rgba(237,232,223,.08)!important;
-    font-size:.93rem!important}
-  .eco-panel a:last-child{border-bottom:0!important}
-}
-
-</style>
+<link rel="stylesheet" href="/page-styles/3learn.css?v=20261007">
+<link rel="stylesheet" href="/public-navigation.css?v=20261007">
+<link rel="stylesheet" href="/responsive.css?v=20261007">
+<link rel="stylesheet" href="/kosler-theme.css?v=20261008-hyperrealistic-soft">
 </head>
 <body>
 
@@ -393,16 +51,11 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
       <a href="/#sobre-mi">Sobre mí</a>
       <details class="eco-menu">
         <summary>Ecosistema</summary>
-        <div class="eco-panel">
-          <a href="/#treslearn">Modelo 3Learn<small>Cognición · emoción · cuerpo</small></a>
-          <a href="/neu-va">NeuVA<small>Asistente neuroeducativo</small></a>
-          <a href="/#seedmax">SEEDMAX<small>Inteligencia educativa</small></a>
-          <a href="/#rompela">Rómpela PAES<small>Diagnóstico y entrenamiento</small></a>
-          <a href="/coaching-paes-ciencias-101">Coaching PAES 101<small>Acompañamiento personalizado</small></a>
-        </div>
+        <div class="eco-panel dropdown-panel"><div class="eco-group products"><h2>Aprende y practica</h2><a href="https://kosler-academy.koslergroup.chatgpt.site/apps"><span class="eco-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 8 9 5 9-5M3 8v8l9 5 9-5V8M12 13v8"/></svg></span><span class="eco-copy"><b>Kosler Apps</b><small>Apps interactivas para aprender y explorar.</small></span></a><a href="/#rompela"><span class="eco-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span><span class="eco-copy"><b>Rómpela PAES</b><small>Diagnóstico y entrenamiento.</small></span></a><a href="https://kosler-academy.koslergroup.chatgpt.site/coaching-paes-ciencias-101"><span class="eco-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><span class="eco-copy"><b>Coaching PAES 101</b><small>Acompañamiento personalizado.</small></span></a><a href="https://kosler-academy.koslergroup.chatgpt.site/academy"><span class="eco-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5-10-5ZM6 11v6c3 3 9 3 12 0v-6M22 9v7"/></svg></span><span class="eco-copy"><b>Kosler Academy</b><small>Cursos y rutas de aprendizaje.</small></span></a><a href="https://kosler-academy.koslergroup.chatgpt.site/libros"><span class="eco-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7v14M3 3h4a5 5 0 0 1 5 4 5 5 0 0 1 5-4h4v16h-4a5 5 0 0 0-5 2 5 5 0 0 0-5-2H3V3Z"/></svg></span><span class="eco-copy"><b>Kosler Ediciones</b><small>Libros y recursos.</small></span></a></div><div class="eco-group technology"><h2>Modelo y tecnología</h2><a href="/3learn"><span class="eco-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 18V5a3 3 0 0 0-6-1 4 4 0 0 0-3 6 4 4 0 0 0 0 7 4 4 0 0 0 7 4M12 5a3 3 0 0 1 6-1 4 4 0 0 1 3 6 4 4 0 0 1 0 7 4 4 0 0 1-7 4M6 10l3 2M18 10l-3 2"/></svg></span><span class="eco-copy"><b>Modelo 3Learn</b><small>Cognición · emoción · cuerpo.</small></span></a><a href="/neu-va"><span class="eco-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="16" y="16" width="6" height="6" rx="1"/><path d="M12 8v4M5 16v-4h14v4"/></svg></span><span class="eco-copy"><b>NeuVA</b><small>Inteligencia adaptativa para aprender.</small></span></a><a href="/#seedmax"><span class="eco-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22v-8M12 14C4 14 2 9 2 4c6 0 10 4 10 10ZM12 11c0-6 4-9 10-9 0 6-4 10-10 10"/></svg></span><span class="eco-copy"><b>SEEDMAX</b><small>Empresa de innovación educativa.</small></span></a></div></div>
       </details>
       <a href="/#insights">Insights</a>
       <a href="/#conferencias">Conferencias</a>
+      <a href="https://kosler-academy.koslergroup.chatgpt.site/libros">Libros</a>
       <a href="/#contacto" class="nav-cta">Contacto</a>
     </nav>
     <button class="burger" id="burger" aria-label="Abrir menú"><span></span><span></span><span></span></button>
@@ -422,7 +75,7 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
       </div>
     </div>
     <aside class="hero-visual reveal" data-d="2" aria-label="Las tres dimensiones del Modelo 3Learn">
-      <span class="visual-label">Arquitectura integral</span>
+      <img class="kosler-brain-art" src="/images/coaching-digital-brain.png" alt="" width="1536" height="1024" decoding="async" aria-hidden="true"><span class="visual-label">Arquitectura integral</span>
       <div class="hero-layer"><span class="mark">C</span><span><strong>Cognición</strong><span>Comprender, aplicar y transferir</span></span></div>
       <div class="hero-layer"><span class="mark">E</span><span><strong>Emoción</strong><span>Regular, motivar y perseverar</span></span></div>
       <div class="hero-layer"><span class="mark">C</span><span><strong>Cuerpo</strong><span>Activar atención, energía y presencia</span></span></div>
@@ -533,12 +186,12 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
     <span class="eyebrow reveal">06 / Fundamentos científicos</span>
     <h2 class="reveal" data-d="1">Un modelo basado en evidencia y diseño pedagógico</h2>
     <div class="cards-3">
-      <article class="card reveal" data-d="1"><span class="ix">Base 01</span><h3>Neuroeducación</h3><p>Aprendizaje basado en el funcionamiento del cerebro.</p></article>
-      <article class="card reveal" data-d="2"><span class="ix">Base 02</span><h3>Evaluación formativa</h3><p>Uso de evidencias para tomar mejores decisiones pedagógicas.</p></article>
-      <article class="card reveal" data-d="3"><span class="ix">Base 03</span><h3>DUA</h3><p>Diseño universal para el aprendizaje y accesibilidad cognitiva.</p></article>
-      <article class="card reveal" data-d="1"><span class="ix">Base 04</span><h3>4MAT</h3><p>Diseño de experiencias para diferentes formas de aprender.</p></article>
-      <article class="card reveal" data-d="2"><span class="ix">Base 05</span><h3>Montessori</h3><p>Autonomía, exploración y aprendizaje significativo.</p></article>
-      <article class="card reveal" data-d="3" style="border-color:rgba(242,153,74,.32)"><span class="ix">Base 06</span><h3>IA educativa</h3><p>Personalización escalable del aprendizaje mediante datos.</p></article>
+      <article class="card reveal" data-d="1"><span class="card-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v7L4 20a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1l-6-10V3M8 15h8"/></svg></span><span class="ix">Base 01</span><h3>Neuroeducación</h3><p>Aprendizaje basado en el funcionamiento del cerebro.</p></article>
+      <article class="card reveal" data-d="2"><span class="card-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v7L4 20a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1l-6-10V3M8 15h8"/></svg></span><span class="ix">Base 02</span><h3>Evaluación formativa</h3><p>Uso de evidencias para tomar mejores decisiones pedagógicas.</p></article>
+      <article class="card reveal" data-d="3"><span class="card-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v7L4 20a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1l-6-10V3M8 15h8"/></svg></span><span class="ix">Base 03</span><h3>DUA</h3><p>Diseño universal para el aprendizaje y accesibilidad cognitiva.</p></article>
+      <article class="card reveal" data-d="1"><span class="card-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v7L4 20a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1l-6-10V3M8 15h8"/></svg></span><span class="ix">Base 04</span><h3>4MAT</h3><p>Diseño de experiencias para diferentes formas de aprender.</p></article>
+      <article class="card reveal" data-d="2"><span class="card-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v7L4 20a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1l-6-10V3M8 15h8"/></svg></span><span class="ix">Base 05</span><h3>Montessori</h3><p>Autonomía, exploración y aprendizaje significativo.</p></article>
+      <article class="card reveal" data-d="3" style="border-color:rgba(242,153,74,.32)"><span class="card-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v7L4 20a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1l-6-10V3M8 15h8"/></svg></span><span class="ix">Base 06</span><h3>IA educativa</h3><p>Personalización escalable del aprendizaje mediante datos.</p></article>
     </div>
   </div>
 </section>
@@ -567,6 +220,7 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
     </div>
     <div class="foot-col">
       <h5>Conectar</h5>
+      <a class="footer-instagram" href="https://www.instagram.com/kosler.profe/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Profe Kosler: @kosler.profe (abre en una pestaña nueva)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8"/></svg><span>Instagram · @kosler.profe</span></a>
       <a href="/#contacto">Formulario de contacto</a>
       <a href="/privacidad">Privacidad</a>
     </div>
@@ -664,5 +318,6 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
 
 </script>
+<script type="module" src="/neural-backdrop.mjs?v=20261008-hyperbrain-soft"></script>
 </body>
 </html>

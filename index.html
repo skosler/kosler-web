@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="es"><head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
 <!-- ============ SEO ============ -->
 <title>Sebastián Kosler | Educación, IA y neurociencia</title>
-<meta name="description" content="Sebastián Kosler integra educación, IA y neurociencia para crear 3Learn, SEEDMAX, Rómpela PAES y NeuVA: mejores decisiones para aprender.">
+<meta name="description" content="Sebastián Kosler integra educación, IA y neurociencia para crear 3Learn, Kosler Academy, SEEDMAX, Rómpela PAES y NeuVA: mejores decisiones para aprender.">
 <meta name="author" content="Sebastián Kosler">
 <meta name="theme-color" content="#0B1628">
 <link rel="canonical" href="https://kosler.cl/">
@@ -29,7 +29,7 @@
 <!-- ============ Tipografías ============ -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&amp;family=Instrument+Sans:wght@400..700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Syne:wght@500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
 
 <!-- ============ Schema.org / Person ============ -->
 <script type="application/ld+json">
@@ -46,447 +46,16 @@
 }
 </script>
 
-<style>
-/* =========================================================
-   KOSLER.CL — Sistema de diseño
-   Estética: editorial-tecnológica, navy profundo + ámbar
-   ========================================================= */
-:root{
-  --navy-900:#070F1C;        /* fondo más profundo */
-  --navy-800:#0B1628;        /* base de marca */
-  --navy-700:#0F1E36;        /* superficies */
-  --navy-600:#16294A;        /* tarjetas */
-  --line:rgba(237,232,223,.10);
-  --line-strong:rgba(237,232,223,.20);
 
-  --cream:#EDE8DF;           /* texto claro de marca */
-  --cream-dim:#B9B6AE;       /* texto secundario */
-  --cream-faint:#7E8597;     /* texto terciario / azulado */
-
-  --orange:#E8622A;          /* acento principal de marca */
-  --amber:#F2994A;           /* acento glow */
-  --amber-soft:rgba(242,153,74,.14);
-
-  --maxw:1240px;
-  --gut:clamp(20px,5vw,64px);
-
-  --f-display:"Bricolage Grotesque",system-ui,sans-serif;
-  --f-body:"Instrument Sans",system-ui,sans-serif;
-  --f-mono:"JetBrains Mono",monospace;
-  --f-accent:"Syne",system-ui,sans-serif;
-
-  --ease:cubic-bezier(.22,.61,.36,1);
-}
-
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{
-  font-family:var(--f-body);
-  background:var(--navy-800);
-  color:var(--cream);
-  line-height:1.65;
-  font-weight:400;
-  overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
-}
-::selection{background:var(--orange);color:#fff}
-:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:4px}
-a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-
-/* Grain / textura sutil sobre todo el sitio */
-body::after{
-  content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;
-  opacity:.035;mix-blend-mode:overlay;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-/* ---------- Tipografía base ---------- */
-h1,h2,h3,h4{font-family:var(--f-display);font-weight:560;line-height:1.05;letter-spacing:-.022em}
-h2{font-size:clamp(2rem,5vw,3.4rem)}
-h3{font-size:clamp(1.3rem,2.4vw,1.7rem);line-height:1.18}
-p{color:var(--cream-dim);max-width:62ch}
-
-.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gut)}
-.section{position:relative;padding:clamp(80px,12vh,150px) 0}
-
-/* Etiqueta de sección tipo "01 / SOBRE MÍ" */
-.eyebrow{
-  font-family:var(--f-accent);font-size:.78rem;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--amber);
-  display:inline-flex;align-items:center;gap:14px;margin-bottom:26px;font-weight:700;
-}
-.eyebrow::before{content:"";width:34px;height:1px;background:var(--orange);display:inline-block}
-
-.lead{font-size:clamp(1.05rem,1.5vw,1.22rem);color:var(--cream-dim);max-width:60ch;margin-top:22px}
-
-/* =================== NAV =================== */
-header.nav{
-  position:fixed;top:0;left:0;right:0;z-index:1000;
-  transition:background .4s var(--ease),border-color .4s var(--ease),backdrop-filter .4s;
-  border-bottom:1px solid transparent;
-}
-header.nav.scrolled{
-  background:rgba(7,15,28,.72);
-  backdrop-filter:blur(14px) saturate(140%);
-  border-bottom:1px solid var(--line);
-}
-.nav-inner{max-width:var(--maxw);margin-inline:auto;padding:18px var(--gut);
-  display:flex;align-items:center;justify-content:space-between;gap:24px}
-.brand{display:flex;align-items:center;gap:12px;font-family:var(--f-display);
-  font-size:1.18rem;letter-spacing:-.01em;font-weight:500}
-.brand .dot{width:11px;height:11px;border-radius:50%;
-  background:radial-gradient(circle at 30% 30%,var(--amber),var(--orange));
-  box-shadow:0 0 16px var(--orange)}
-.nav-links{display:flex;gap:30px;align-items:center}
-.nav-links a{font-size:.85rem;color:var(--cream-dim);letter-spacing:.01em;
-  position:relative;transition:color .25s;padding:4px 0}
-.nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1px;
-  background:var(--orange);transition:width .3s var(--ease)}
-.nav-links a:hover{color:var(--cream)}
-.nav-links a:hover::after{width:100%}
-.nav-cta{border:1px solid var(--line-strong);padding:9px 18px !important;border-radius:100px;
-  color:var(--cream)!important;transition:all .3s var(--ease)}
-.nav-cta:hover{background:var(--orange);border-color:var(--orange)}
-.nav-cta::after{display:none}
-.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
-.burger span{width:24px;height:2px;background:var(--cream);transition:.3s}
-
-/* =================== BOTONES =================== */
-.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-body);
-  font-size:.92rem;font-weight:500;padding:14px 26px;border-radius:100px;
-  cursor:pointer;transition:all .3s var(--ease);border:1px solid transparent;letter-spacing:.005em}
-.btn .arr{transition:transform .3s var(--ease)}
-.btn:hover .arr{transform:translateX(4px)}
-.btn-primary{background:var(--orange);color:#fff;box-shadow:0 8px 30px -10px rgba(232,98,42,.7)}
-.btn-primary:hover{background:var(--amber);transform:translateY(-2px);box-shadow:0 14px 40px -12px rgba(232,98,42,.85)}
-.btn-ghost{border-color:var(--line-strong);color:var(--cream)}
-.btn-ghost:hover{border-color:var(--cream);background:rgba(237,232,223,.05);transform:translateY(-2px)}
-.btn-text{padding:14px 0;color:var(--amber)}
-.btn-text:hover{color:var(--cream)}
-
-/* =================== HERO =================== */
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;
-  padding-top:90px;overflow:hidden}
-#neural{position:absolute;inset:0;width:100%;height:100%;z-index:0}
-.hero::before{ /* glow ambiental */
-  content:"";position:absolute;z-index:1;width:60vw;height:60vw;right:-15vw;top:-10vw;
-  background:radial-gradient(circle,rgba(232,98,42,.18),transparent 60%);pointer-events:none}
-.hero::after{
-  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:linear-gradient(180deg,rgba(7,15,28,.2),rgba(7,15,28,.55) 60%,var(--navy-800))}
-.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.35fr .85fr;
-  gap:clamp(30px,5vw,72px);align-items:center;width:100%}
-.hero h1{font-size:clamp(2.9rem,7vw,5.6rem);font-weight:620;letter-spacing:-.038em;line-height:.96}
-.hero .sub{font-family:var(--f-accent);font-size:clamp(.92rem,1.6vw,1.12rem);
-  color:var(--amber);letter-spacing:.005em;margin:26px 0 22px;font-weight:600}
-.hero .intro{font-size:clamp(1rem,1.4vw,1.18rem);color:var(--cream-dim);max-width:52ch}
-.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px}
-
-/* Retrato del hero */
-.hero-portrait{position:relative;border-radius:22px;overflow:hidden;
-  border:1px solid var(--line-strong);background:linear-gradient(155deg,rgba(22,41,74,.9),rgba(11,22,40,.85));
-  box-shadow:0 30px 80px -30px rgba(0,0,0,.6);max-width:460px;justify-self:end;width:100%}
-.hero-portrait::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;z-index:2;
-  background:linear-gradient(90deg,var(--orange),var(--amber),transparent)}
-.hero-portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 18%;display:block;
-  filter:saturate(.94) contrast(1.04)}
-.hero-portrait::after{content:"";position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(180deg,rgba(232,98,42,.08),transparent 28%,transparent 70%,rgba(7,15,28,.55))}
-
-.scroll-hint{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:3;
-  font-family:var(--f-mono);font-size:.66rem;letter-spacing:.22em;color:var(--cream-faint);
-  text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:10px}
-.scroll-hint .ln{width:1px;height:40px;background:linear-gradient(var(--orange),transparent);
-  animation:scrolldn 2s var(--ease) infinite}
-@keyframes scrolldn{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}
-  50.1%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
-
-/* =================== TESIS =================== */
-.thesis h2{max-width:18ch}
-.thesis .lead{margin-bottom:56px}
-.cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--navy-700);border:1px solid var(--line);border-radius:18px;
-  padding:32px 30px;transition:transform .4s var(--ease),border-color .4s,background .4s;position:relative;overflow:hidden}
-.card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 100% 0%,var(--amber-soft),transparent 50%);
-  opacity:0;transition:opacity .4s}
-.card:hover{transform:translateY(-6px);border-color:var(--line-strong);background:var(--navy-600)}
-.card:hover::before{opacity:1}
-.card .ix{font-family:var(--f-accent);font-weight:700;font-size:.76rem;color:var(--orange);letter-spacing:.12em;margin-bottom:18px;display:block;text-transform:uppercase}
-.card h3{margin-bottom:12px}
-.card p{font-size:.97rem;max-width:none}
-
-/* =================== RUTAS POR AUDIENCIA =================== */
-.audience{margin-top:64px;padding-top:48px;border-top:1px solid var(--line)}
-.audience-head{display:flex;justify-content:space-between;gap:32px;align-items:end;margin-bottom:28px}
-.audience-head h3{font-size:clamp(1.65rem,3vw,2.25rem);max-width:18ch}
-.audience-head p{font-size:.96rem;max-width:48ch}
-.audience-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.audience-card{display:flex;flex-direction:column;min-height:210px;padding:25px;border:1px solid var(--line);
-  border-radius:16px;background:rgba(15,30,54,.72);transition:.35s var(--ease)}
-.audience-card:hover{transform:translateY(-5px);border-color:var(--orange);background:var(--navy-600)}
-.audience-card .who{font-family:var(--f-accent);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--amber);font-weight:700}
-.audience-card h4{font-size:1.12rem;margin:22px 0 10px}
-.audience-card p{font-size:.88rem;max-width:none;margin-bottom:auto}
-.audience-card .go{font-family:var(--f-mono);font-size:.72rem;color:var(--cream);margin-top:22px}
-
-/* =================== SOBRE MÍ =================== */
-.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(36px,5vw,72px);align-items:start}
-.about-grid .lead{margin-top:0}
-.creds{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--navy-700)}
-.creds .ctitle{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--cream-faint);padding:20px 26px;border-bottom:1px solid var(--line)}
-.cred{display:flex;align-items:baseline;gap:16px;padding:16px 26px;border-bottom:1px solid var(--line);transition:background .3s}
-.cred:last-child{border-bottom:0}
-.cred:hover{background:var(--navy-600)}
-.cred .mk{font-family:var(--f-accent);font-weight:700;font-size:.8rem;color:var(--orange);min-width:24px}
-.cred .ct{font-size:.95rem;color:var(--cream)}
-.cred .cs{font-size:.8rem;color:var(--cream-faint);display:block}
-.proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
-.proof{padding:24px;border:1px solid var(--line);border-radius:15px;background:var(--navy-700)}
-.proof strong{display:block;font-family:var(--f-accent);font-size:clamp(1.55rem,3vw,2.15rem);color:var(--amber);line-height:1}
-.proof span{display:block;font-size:.84rem;color:var(--cream-dim);margin-top:10px}
-
-/* =================== 3LEARN =================== */
-.dims{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:54px}
-.dim{border:1px solid var(--line);border-radius:18px;padding:34px 30px;background:var(--navy-700);position:relative}
-.dim .ico{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;margin-bottom:22px;
-  background:var(--amber-soft);color:var(--amber)}
-.dim svg{width:24px;height:24px}
-.dim h3{margin-bottom:10px}
-.dim p{font-size:.95rem;max-width:none}
-
-.moments{margin-top:64px}
-.mh{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--cream-faint);margin-bottom:30px}
-.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
-.steps::before{content:"";position:absolute;top:19px;left:5%;right:5%;height:1px;
-  background:linear-gradient(90deg,var(--orange),var(--amber));opacity:.4}
-.step{position:relative;padding-right:18px}
-.step .num{width:40px;height:40px;border-radius:50%;background:var(--navy-800);border:1px solid var(--orange);
-  display:grid;place-items:center;font-family:var(--f-accent);font-weight:700;font-size:.9rem;color:var(--amber);
-  margin-bottom:18px;position:relative;z-index:2}
-.step h4{font-family:var(--f-display);font-size:1.02rem;font-weight:500;line-height:1.25;color:var(--cream)}
-
-/* =================== SEEDMAX =================== */
-.mv{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:50px}
-.mv .card h3{color:var(--amber)}
-.arch{margin-top:22px;display:grid;gap:14px}
-.arch-row{display:flex;gap:20px;align-items:flex-start;padding:22px 26px;border:1px solid var(--line);
-  border-radius:14px;background:var(--navy-700);transition:.35s var(--ease)}
-.arch-row:hover{border-color:var(--orange);transform:translateX(6px)}
-.arch-row .lbl{font-family:var(--f-display);font-size:1.1rem;color:var(--cream);min-width:170px;font-weight:500}
-.arch-row p{font-size:.95rem;max-width:none}
-.roadmap{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:50px;border:1px solid var(--line);
-  border-radius:18px;overflow:hidden}
-.rm{padding:34px 30px;border-right:1px solid var(--line)}
-.rm:last-child{border-right:0}
-.rm .yr{font-family:var(--f-accent);font-weight:800;font-size:2.6rem;color:var(--orange);line-height:1;letter-spacing:-.01em}
-.rm p{font-size:.95rem;margin-top:12px;max-width:none}
-
-/* =================== RÓMPELA / NEUVA banda =================== */
-.feature{background:
-   radial-gradient(circle at 85% 15%,rgba(232,98,42,.16),transparent 45%),
-   var(--navy-900)}
-.neuva{background:
-   radial-gradient(circle at 12% 80%,rgba(242,153,74,.13),transparent 45%),
-   var(--navy-700)}
-.neuva-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(34px,5vw,64px);align-items:center}
-.feature-list{list-style:none;display:grid;gap:2px;margin-top:34px}
-.feature-list li{display:flex;gap:16px;align-items:flex-start;padding:15px 0;border-bottom:1px solid var(--line);color:var(--cream-dim);font-size:.97rem}
-.feature-list li:last-child{border-bottom:0}
-.feature-list .chk{color:var(--orange);font-family:var(--f-mono);flex-shrink:0}
-
-/* =================== INSIGHTS =================== */
-.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:50px}
-.post{border:1px solid var(--line);border-radius:18px;padding:30px 28px;background:var(--navy-700);
-  display:flex;flex-direction:column;min-height:240px;transition:.4s var(--ease)}
-.post:hover{transform:translateY(-6px);border-color:var(--orange);background:var(--navy-600)}
-.post .cat{font-family:var(--f-accent);font-weight:700;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:auto}
-.post h3{font-size:1.25rem;line-height:1.25;margin:22px 0 0}
-.post .read{font-family:var(--f-mono);font-size:.74rem;color:var(--cream-faint);margin-top:22px;display:flex;align-items:center;gap:8px}
-
-/* =================== CONFERENCIAS =================== */
-.topics{display:flex;flex-wrap:wrap;gap:12px;margin-top:46px}
-.topic{border:1px solid var(--line-strong);border-radius:100px;padding:12px 22px;font-size:.9rem;
-  color:var(--cream-dim);transition:.3s var(--ease)}
-.topic:hover{border-color:var(--orange);color:var(--cream);background:var(--amber-soft)}
-
-/* =================== CONTACTO =================== */
-.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(36px,5vw,72px);align-items:start}
-form{display:grid;gap:16px;background:var(--navy-700);border:1px solid var(--line);border-radius:20px;padding:clamp(26px,3vw,38px)}
-.field{display:grid;gap:8px}
-.row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-label{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--cream-faint)}
-input,textarea,select{font-family:var(--f-body);font-size:.95rem;background:var(--navy-900);
-  border:1px solid var(--line);border-radius:10px;padding:13px 15px;color:var(--cream);transition:border-color .3s}
-input:focus,textarea:focus,select:focus{outline:0;border-color:var(--orange)}
-textarea{resize:vertical;min-height:110px}
-.form-msg{font-size:.85rem;color:var(--amber);min-height:1em}
-.honeypot{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important}
-.privacy-note{font-size:.75rem;color:var(--cream-faint);max-width:none;line-height:1.5}
-.privacy-note a{color:var(--amber);text-decoration:underline;text-underline-offset:3px}
-
-.closing{text-align:center;padding:clamp(70px,10vh,120px) 0}
-.closing .big{font-family:var(--f-display);font-size:clamp(1.8rem,4.2vw,3.1rem);line-height:1.14;
-  max-width:20ch;margin:0 auto;font-style:normal;font-weight:540;letter-spacing:-.025em}
-.closing .big b{color:var(--orange);font-style:normal;font-weight:500}
-
-/* =================== FOOTER =================== */
-footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 0 40px}
-.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
-.foot-brand .brand{margin-bottom:14px}
-.foot-brand p{font-size:.9rem;max-width:34ch}
-.foot-col h5{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--cream-faint);margin-bottom:18px;font-weight:500}
-.foot-col a{display:block;font-size:.92rem;color:var(--cream-dim);padding:6px 0;transition:color .25s}
-.foot-col a:hover{color:var(--orange)}
-.foot-bottom{margin-top:50px;padding-top:26px;border-top:1px solid var(--line);
-  display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;
-  font-size:.8rem;color:var(--cream-faint);font-family:var(--f-mono);letter-spacing:.03em}
-
-/* =================== REVEAL ANIM =================== */
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
-.reveal.in{opacity:1;transform:none}
-[data-d="1"]{transition-delay:.08s}[data-d="2"]{transition-delay:.16s}
-[data-d="3"]{transition-delay:.24s}[data-d="4"]{transition-delay:.32s}[data-d="5"]{transition-delay:.4s}
-
-/* =================== RESPONSIVE =================== */
-@media(max-width:1000px){
-  .hero-grid,.about-grid,.neuva-grid,.contact-grid{grid-template-columns:1fr}
-  .hero-portrait{order:-1;justify-self:start;max-width:380px}
-  .cards-3,.dims,.posts,.mv,.audience-grid,.proof-grid{grid-template-columns:1fr 1fr}
-  .roadmap{grid-template-columns:1fr}.rm{border-right:0;border-bottom:1px solid var(--line)}.rm:last-child{border-bottom:0}
-  .steps{grid-template-columns:1fr 1fr;gap:30px}.steps::before{display:none}
-  .foot-grid{grid-template-columns:1fr 1fr}
-}
-@media(max-width:900px){
-  .nav-links{position:fixed;inset:0 0 0 auto;width:min(80vw,320px);background:#070F1C!important;
-    flex-direction:column;justify-content:center;gap:26px;padding:40px;transform:translateX(100%);
-    transition:transform .4s var(--ease);border-left:1px solid rgba(237,232,223,.18);z-index:1001;
-    opacity:1;backdrop-filter:none;box-shadow:-24px 0 60px rgba(0,0,0,.55)}
-  .nav-links.open{transform:none}
-  .nav-links a{font-size:1.05rem}
-  .burger{display:flex;z-index:1002}
-}
-@media(max-width:680px){
-  .cards-3,.dims,.posts,.mv,.row2,.steps,.audience-grid,.proof-grid{grid-template-columns:1fr}
-  .audience-head{display:block}.audience-head p{margin-top:14px}
-  .foot-grid{grid-template-columns:1fr}
-}
-@media(prefers-reduced-motion:reduce){
-  *{animation:none!important;scroll-behavior:auto!important}
-  .reveal{opacity:1;transform:none}
-}
-</style>
 <!-- KOSLER_MENU_INLINE_V4_20260819 -->
-<style id="kosler-mobile-menu-inline">
-/* Menú móvil global de kosler.cl — fondo realmente opaco */
-.kosler-menu-backdrop{display:none}
+<!-- KOSLER_ECOSYSTEM_MENU_V1 -->
 
-@media (max-width:900px){
-  body.kosler-menu-open{overflow:hidden!important;touch-action:none}
 
-  .burger{
-    display:flex!important;position:relative;z-index:2101;flex-direction:column;
-    justify-content:center;align-items:center;gap:5px;width:44px;height:44px;
-    padding:8px;border:0;border-radius:50%;background:#0F1E36!important;
-    box-shadow:0 0 0 1px rgba(237,232,223,.18);cursor:pointer
-  }
-  .burger span{display:block;width:24px;height:2px;background:#EDE8DF!important;
-    border-radius:2px;transition:transform .25s ease,opacity .2s ease}
-  .burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-  .burger[aria-expanded="true"] span:nth-child(2){opacity:0}
-  .burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
-  header.nav.kosler-menu-active,.nav.kosler-menu-active,
-  header.nav.scrolled.kosler-menu-active,.nav.scrolled.kosler-menu-active{
-    background:#070F1C!important;background-image:none!important;
-    -webkit-backdrop-filter:none!important;backdrop-filter:none!important;
-    border-bottom-color:rgba(237,232,223,.12)!important;
-    z-index:2200!important
-  }
-
-  .nav-links{
-    display:flex!important;position:fixed!important;inset:0 0 0 auto!important;
-    width:min(84vw,350px)!important;height:100vh!important;height:100dvh!important;
-    min-height:100vh!important;flex-direction:column!important;align-items:stretch!important;
-    justify-content:center!important;gap:6px!important;padding:92px 30px 38px!important;
-    margin:0!important;overflow-y:auto!important;
-    background-color:#070F1C!important;
-    background-image:linear-gradient(#070F1C,#070F1C)!important;
-    -webkit-backdrop-filter:none!important;backdrop-filter:none!important;
-    opacity:1!important;isolation:isolate!important;
-    border-left:1px solid rgba(237,232,223,.18)!important;
-    box-shadow:-28px 0 70px rgba(0,0,0,.72)!important;
-    transform:translate3d(105%,0,0)!important;
-    transition:transform .32s cubic-bezier(.22,1,.36,1)!important;
-    z-index:2100!important;visibility:hidden!important
-  }
-  .nav-links::before{
-    content:""!important;position:absolute!important;inset:0!important;
-    background:#070F1C!important;opacity:1!important;z-index:-1!important;
-    pointer-events:none!important
-  }
-  .nav-links.open{
-    transform:translate3d(0,0,0)!important;visibility:visible!important
-  }
-  .nav-links a{
-    display:block!important;width:100%!important;padding:14px 4px!important;
-    color:#EDE8DF!important;font-size:1.04rem!important;line-height:1.25!important;
-    border-bottom:1px solid rgba(237,232,223,.11)!important
-  }
-  .nav-links a:last-child{border-bottom:0!important}
-
-  .kosler-menu-backdrop{
-    display:block;position:fixed;inset:0;z-index:2190;border:0;padding:0;
-    background:rgba(3,8,19,.78);-webkit-backdrop-filter:none;backdrop-filter:none;
-    opacity:0;visibility:hidden;pointer-events:none;cursor:pointer;
-    transition:opacity .25s ease,visibility .25s ease
-  }
-  .kosler-menu-backdrop.open{opacity:1;visibility:visible;pointer-events:auto}
-}
-
-@media (min-width:901px){
-  .burger[data-kosler-generated="true"]{display:none!important}
-}
-
-</style><!-- KOSLER_ECOSYSTEM_MENU_V1 -->
-<style id="kosler-ecosystem-menu-inline">
-/* Navegación global del ecosistema Kosler */
-.eco-menu{position:relative}
-.eco-menu summary{display:flex;align-items:center;gap:7px;list-style:none;cursor:pointer;
-  color:#B9B6AE;font-size:.86rem;line-height:1.2;white-space:nowrap;user-select:none}
-.eco-menu summary::-webkit-details-marker{display:none}
-.eco-menu summary::after{content:"⌄";color:#F2994A;font-size:.8rem;transition:transform .2s ease}
-.eco-menu[open] summary{color:#EDE8DF}
-.eco-menu[open] summary::after{transform:rotate(180deg)}
-.eco-panel{position:absolute;top:calc(100% + 18px);left:50%;transform:translateX(-50%);
-  width:270px;padding:10px;background:#070F1C;border:1px solid rgba(237,232,223,.18);
-  border-radius:15px;box-shadow:0 24px 60px rgba(0,0,0,.62);z-index:2300}
-.eco-panel::before{content:"";position:absolute;left:50%;top:-7px;width:12px;height:12px;
-  transform:translateX(-50%) rotate(45deg);background:#070F1C;
-  border-left:1px solid rgba(237,232,223,.18);border-top:1px solid rgba(237,232,223,.18)}
-.eco-panel a{display:block!important;padding:11px 13px!important;border-radius:9px!important;
-  color:#B9B6AE!important;font-size:.88rem!important;line-height:1.25!important}
-.eco-panel a:hover{background:#0F1E36!important;color:#EDE8DF!important}
-.eco-panel small{display:block;color:#7E8597;font-size:.7rem;margin-top:3px}
-
-@media(max-width:900px){
-  .eco-menu{width:100%}
-  .eco-menu summary{width:100%;padding:14px 4px;color:#EDE8DF;font-size:1.04rem;
-    border-bottom:1px solid rgba(237,232,223,.11)}
-  .eco-menu summary::after{margin-left:auto;margin-right:4px}
-  .eco-panel{position:static;width:100%;transform:none;margin:5px 0 8px;padding:6px;
-    background:#0B1628;border-radius:11px;box-shadow:none}
-  .eco-panel::before{display:none}
-  .eco-panel a{padding:11px 14px!important;border-bottom:1px solid rgba(237,232,223,.08)!important;
-    font-size:.93rem!important}
-  .eco-panel a:last-child{border-bottom:0!important}
-}
-
-</style>
+<link rel="stylesheet" href="/page-styles/kosler-home.css?v=20261007">
+<link rel="stylesheet" href="/public-navigation.css?v=20261007">
+<link rel="stylesheet" href="/responsive.css?v=20261007">
+<link rel="stylesheet" href="/kosler-theme.css?v=20261008-hyperrealistic-soft">
 </head>
 <body>
 
@@ -499,16 +68,11 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
       <a href="/#sobre-mi">Sobre mí</a>
       <details class="eco-menu">
         <summary>Ecosistema</summary>
-        <div class="eco-panel">
-          <a href="/#treslearn">Modelo 3Learn<small>Cognición · emoción · cuerpo</small></a>
-          <a href="/neu-va">NeuVA<small>Asistente neuroeducativo</small></a>
-          <a href="/#seedmax">SEEDMAX<small>Inteligencia educativa</small></a>
-          <a href="/#rompela">Rómpela PAES<small>Diagnóstico y entrenamiento</small></a>
-          <a href="/coaching-paes-ciencias-101">Coaching PAES 101<small>Acompañamiento personalizado</small></a>
-        </div>
+        <div class="eco-panel dropdown-panel"><div class="eco-group products"><h2>Aprende y practica</h2><a href="https://kosler-academy.koslergroup.chatgpt.site/apps"><span class="eco-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 8 9 5 9-5M3 8v8l9 5 9-5V8M12 13v8"/></svg></span><span class="eco-copy"><b>Kosler Apps</b><small>Apps interactivas para aprender y explorar.</small></span></a><a href="/#rompela"><span class="eco-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span><span class="eco-copy"><b>Rómpela PAES</b><small>Diagnóstico y entrenamiento.</small></span></a><a href="https://kosler-academy.koslergroup.chatgpt.site/coaching-paes-ciencias-101"><span class="eco-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><span class="eco-copy"><b>Coaching PAES 101</b><small>Acompañamiento personalizado.</small></span></a><a href="https://kosler-academy.koslergroup.chatgpt.site/academy"><span class="eco-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5-10-5ZM6 11v6c3 3 9 3 12 0v-6M22 9v7"/></svg></span><span class="eco-copy"><b>Kosler Academy</b><small>Cursos y rutas de aprendizaje.</small></span></a><a href="https://kosler-academy.koslergroup.chatgpt.site/libros"><span class="eco-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7v14M3 3h4a5 5 0 0 1 5 4 5 5 0 0 1 5-4h4v16h-4a5 5 0 0 0-5 2 5 5 0 0 0-5-2H3V3Z"/></svg></span><span class="eco-copy"><b>Kosler Ediciones</b><small>Libros y recursos.</small></span></a></div><div class="eco-group technology"><h2>Modelo y tecnología</h2><a href="/3learn"><span class="eco-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 18V5a3 3 0 0 0-6-1 4 4 0 0 0-3 6 4 4 0 0 0 0 7 4 4 0 0 0 7 4M12 5a3 3 0 0 1 6-1 4 4 0 0 1 3 6 4 4 0 0 1 0 7 4 4 0 0 1-7 4M6 10l3 2M18 10l-3 2"/></svg></span><span class="eco-copy"><b>Modelo 3Learn</b><small>Cognición · emoción · cuerpo.</small></span></a><a href="/neu-va"><span class="eco-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="16" y="16" width="6" height="6" rx="1"/><path d="M12 8v4M5 16v-4h14v4"/></svg></span><span class="eco-copy"><b>NeuVA</b><small>Inteligencia adaptativa para aprender.</small></span></a><a href="/#seedmax"><span class="eco-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22v-8M12 14C4 14 2 9 2 4c6 0 10 4 10 10ZM12 11c0-6 4-9 10-9 0 6-4 10-10 10"/></svg></span><span class="eco-copy"><b>SEEDMAX</b><small>Empresa de innovación educativa.</small></span></a></div></div>
       </details>
       <a href="/#insights">Insights</a>
       <a href="/#conferencias">Conferencias</a>
+      <a href="https://kosler-academy.koslergroup.chatgpt.site/libros">Libros</a>
       <a href="/#contacto" class="nav-cta">Contacto</a>
     </nav>
     <button class="burger" id="burger" aria-label="Abrir menú" type="button" aria-controls="menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -520,13 +84,12 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
   <canvas id="neural" width="1348" height="936"></canvas>
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <h1 class="reveal in">Sebastián<br>Kosler</h1>
+      <span class="eyebrow reveal in">Educación · neurociencia · innovación</span><h1 class="reveal in">Sebastián<br><em>Kosler</em></h1>
       <p class="sub reveal in" data-d="1">Educación, inteligencia artificial y neurociencia aplicada al aprendizaje.</p>
-      <p class="intro reveal in" data-d="2">Diseño modelos, plataformas y estrategias que transforman datos educativos en mejores decisiones de aprendizaje. Desde el Modelo 3Learn hasta SEEDMAX, Rómpela PAES y NeuVA, mi trabajo conecta pedagogía, IA, evaluación y personalización para construir una nueva generación de educación inteligente en Latinoamérica.</p>
+      <p class="intro reveal in" data-d="2">Diseño modelos, plataformas y estrategias que transforman datos educativos en mejores decisiones de aprendizaje. Desde el Modelo 3Learn y Kosler Academy hasta SEEDMAX, Rómpela PAES y NeuVA, mi trabajo conecta pedagogía, IA, evaluación y personalización para construir una nueva generación de educación inteligente en Latinoamérica.</p>
       <div class="hero-cta reveal in" data-d="3">
         <a href="#contacto" class="btn btn-primary">Solicitar reunión <span class="arr">→</span></a>
         <a href="#rutas" class="btn btn-ghost">Explorar ecosistema</a>
-        <a href="#insights" class="btn btn-text">Leer Insights <span class="arr">→</span></a>
       </div>
     </div>
     <aside class="hero-portrait reveal in" data-d="2">
@@ -545,9 +108,9 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
     <h2 class="reveal" data-d="1">La educación no necesita más ruido. Necesita mejores decisiones.</h2>
     <p class="lead reveal" data-d="2">Durante años, estudiantes, docentes e instituciones han tomado decisiones educativas con datos incompletos, diagnósticos tardíos y rutas poco personalizadas. La inteligencia artificial abre una nueva posibilidad: transformar la evaluación, los errores, la emoción y el progreso en información útil para aprender mejor. Mi trabajo se enfoca en construir una educación donde cada estudiante pueda saber qué reforzar, por qué se equivoca, cómo avanzar y qué ruta seguir.</p>
     <div class="cards-3">
-      <article class="card reveal" data-d="1"><span class="ix">01</span><h3>Diagnóstico antes que improvisación</h3><p>No estudiar más a ciegas, sino saber qué estudiar primero.</p></article>
-      <article class="card reveal" data-d="2"><span class="ix">02</span><h3>IA con criterio pedagógico</h3><p>Tecnología que explica, acompaña y personaliza, no solo automatiza.</p></article>
-      <article class="card reveal" data-d="3"><span class="ix">03</span><h3>Aprendizaje integral</h3><p>Cognición, emoción y cuerpo como dimensiones inseparables del aprendizaje.</p></article>
+      <article class="card reveal" data-d="1"><span class="card-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v7L4 20a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1l-6-10V3M8 15h8"/></svg></span><span class="ix">01</span><h3>Diagnóstico antes que improvisación</h3><p>No estudiar más a ciegas, sino saber qué estudiar primero.</p></article>
+      <article class="card reveal" data-d="2"><span class="card-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v7L4 20a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1l-6-10V3M8 15h8"/></svg></span><span class="ix">02</span><h3>IA con criterio pedagógico</h3><p>Tecnología que explica, acompaña y personaliza, no solo automatiza.</p></article>
+      <article class="card reveal" data-d="3"><span class="card-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v7L4 20a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1l-6-10V3M8 15h8"/></svg></span><span class="ix">03</span><h3>Aprendizaje integral</h3><p>Cognición, emoción y cuerpo como dimensiones inseparables del aprendizaje.</p></article>
     </div>
     <div class="audience" id="rutas">
       <div class="audience-head reveal">
@@ -555,6 +118,9 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
         <p>El ecosistema combina acompañamiento, modelos, plataformas y colaboración institucional. Elige el punto de entrada que mejor responde a tu objetivo.</p>
       </div>
       <div class="audience-grid">
+        <a class="audience-card reveal" data-d="1" href="https://kosler-academy.koslergroup.chatgpt.site/academy"><span class="who">Aprendizaje de ciencias</span><h4>Comprender Química, Física y Biología</h4><p>Fundamentos profundos, pensamiento científico y aprender a aprender.</p><span class="go">Conocer Kosler Academy →</span></a>
+        <a class="audience-card reveal" data-d="2" href="https://kosler-academy.koslergroup.chatgpt.site/apps"><span class="who">Kosler Apps</span><h4>Aprender haciendo. Explorar jugando.</h4><p>Aplicaciones de ciencias, lectura y acompañamiento docente, desarrolladas por Profe Kosler.</p><span class="go">Explorar todas las apps →</span></a>
+        <a class="audience-card reveal" data-d="2" href="https://kosler-academy.koslergroup.chatgpt.site/libros"><span class="who">Kosler Ediciones</span><h4>Leer para comprender y transformar</h4><p>Libros de ciencia, aprendizaje y desarrollo humano para leer online en tu cuenta.</p><span class="go">Explorar libros →</span></a>
         <a class="audience-card reveal" data-d="1" href="#rompela"><span class="who">Estudiantes y familias</span><h4>Preparar la PAES con foco</h4><p>Diagnóstico, entrenamiento y acompañamiento personalizado.</p><span class="go">Ver alternativas →</span></a>
         <a class="audience-card reveal" data-d="2" href="#conferencias"><span class="who">Colegios e instituciones</span><h4>Fortalecer decisiones educativas</h4><p>Charlas, asesorías e implementación de modelos con criterio pedagógico.</p><span class="go">Explorar colaboración →</span></a>
         <a class="audience-card reveal" data-d="3" href="#seedmax"><span class="who">EdTech y aliados</span><h4>Construir inteligencia educativa</h4><p>IA, analítica y arquitectura de aprendizaje para proyectos con impacto.</p><span class="go">Conocer SEEDMAX →</span></a>
@@ -589,7 +155,7 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
     <div class="proof reveal" data-d="1"><strong>20+</strong><span>años enseñando ciencias y preparando evaluaciones de acceso universitario</span></div>
     <div class="proof reveal" data-d="2"><strong>15+</strong><span>años de acompañamiento educativo en el Centro de Aprendizaje Las Condes</span></div>
     <div class="proof reveal" data-d="3"><strong>2015–2018</strong><span>docencia universitaria en Didáctica de la Biología y prácticas pedagógicas</span></div>
-    <div class="proof reveal" data-d="4"><strong>4</strong><span>iniciativas articuladas: 3Learn, SEEDMAX, Rómpela PAES y NeuVA</span></div>
+    <div class="proof reveal" data-d="4"><strong>8</strong><span>iniciativas articuladas: Apps, 3Learn, Academy, Ediciones, SEEDMAX, Rómpela PAES, Coaching y NeuVA</span></div>
   </div>
 </section>
 
@@ -628,16 +194,36 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
   </div>
 </section>
 
-<!-- ===================== E. SEEDMAX ===================== -->
+<!-- ===================== E. KOSLER ACADEMY ===================== -->
+<section class="section feature academy-section" id="academy">
+  <div class="wrap">
+    <span class="eyebrow reveal">04 / Kosler Academy</span>
+    <h2 class="reveal" data-d="1">Aprende ciencias. Aprende a aprender.</h2>
+    <p class="lead reveal" data-d="2">Kosler Academy es una experiencia de aprendizaje científico profundo para comprender los fundamentos de Química, Física y Biología. Integra el Modelo 3Learn, diagnóstico, video interactivo, actividades, análisis del error, reflexión y aprendizaje por dominio.</p>
+    <div class="cards-3" style="margin-top:50px">
+      <article class="card academy-course reveal" data-code="Q" data-d="1"><span class="coming-soon-badge"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V6a4 4 0 0 1 8 0v4"/></svg> Próximamente</span><span class="ix">Química</span><h3>Fundamentos de Química</h3><p>Comprender la materia, sus modelos y transformaciones para pensar científicamente.</p></article>
+      <article class="card academy-course reveal" data-code="F" data-d="2"><span class="coming-soon-badge"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V6a4 4 0 0 1 8 0v4"/></svg> Próximamente</span><span class="ix">Física</span><h3>Fundamentos de Física</h3><p>Modelar fenómenos, interpretar evidencia y explicar cómo funciona el mundo.</p></article>
+      <article class="card academy-course reveal" data-code="B" data-d="3"><span class="coming-soon-badge"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V6a4 4 0 0 1 8 0v4"/></svg> Próximamente</span><span class="ix">Biología</span><h3>Fundamentos de Biología</h3><p>Comprender la vida, la organización celular y las relaciones entre sistemas.</p></article>
+    </div>
+    <p class="academy-note reveal" data-d="2">Academy no es una colección de videos: cada módulo acompaña al estudiante desde la conexión inicial hasta la transferencia, la reflexión y el dominio.</p>
+    <div style="margin-top:38px;display:flex;gap:14px;flex-wrap:wrap" class="reveal">
+      <a href="https://kosler-academy.koslergroup.chatgpt.site/academy" class="btn btn-primary">Conocer Kosler Academy <span class="arr">→</span></a>
+      <span class="btn btn-ghost academy-soon" aria-disabled="true">Cursos · Próximamente</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== F. SEEDMAX ===================== -->
+<section class="section kosler-apps-section" id="kosler-apps"><div class="wrap"><span class="eyebrow">KOSLER APPS</span><h2>Aprender haciendo. Explorar jugando.</h2><p class="lead">Aplicaciones de ciencias, lectura y acompañamiento docente desarrolladas por Profe Kosler.</p><div class="cards-3" style="margin-top:36px"><article class="card kosler-app-preview"><span class="card-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v7L4 20a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1l-6-10V3M8 15h8"/></svg></span><span class="ix">Ciencias · Publicada</span><h3>Detectives de la Ciencia</h3><p>Aprender a aprender Ciencias con misiones, laboratorios y bitácora 3Learn. Sebastián Kosler.</p><a class="btn btn-ghost" href="https://detectives-de-la-ciencia.koslergroup.chatgpt.site" target="_blank" rel="noopener noreferrer">Abrir aplicación →</a></article><article class="card kosler-app-preview"><span class="card-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v7L4 20a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1l-6-10V3M8 15h8"/></svg></span><span class="ix">Ciencias · Publicada</span><h3>Detectives del átomo</h3><p>Una aventura científica para 8° básico: seis misiones sobre la historia de la química hasta Bohr.</p><a class="btn btn-ghost" href="https://detectives-del-atomo.koslergroup.chatgpt.site" target="_blank" rel="noopener noreferrer">Abrir aplicación →</a></article><article class="card kosler-app-preview"><span class="card-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v7L4 20a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1l-6-10V3M8 15h8"/></svg></span><span class="ix">Ciencias · Publicada</span><h3>Detectives de la célula</h3><p>Misiones interactivas de teoría celular y células procariontes y eucariontes, con coins, insignias y seguimiento docente.</p><a class="btn btn-ghost" href="https://detectives-de-la-celula.koslergroup.chatgpt.site" target="_blank" rel="noopener noreferrer">Abrir aplicación →</a></article><article class="card kosler-app-preview"><span class="card-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v7L4 20a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1l-6-10V3M8 15h8"/></svg></span><span class="ix">Ciencias · Publicada</span><h3>Detectives: Paciente Cero</h3><p>Aventura de microbiología para 7° básico, desarrollada por Profe Kosler.</p><a class="btn btn-ghost" href="https://detectives-paciente-cero.koslergroup.chatgpt.site" target="_blank" rel="noopener noreferrer">Abrir aplicación →</a></article><article class="card kosler-app-preview"><span class="card-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v7L4 20a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1l-6-10V3M8 15h8"/></svg></span><span class="ix">Ciencias · Publicada</span><h3>IMMUNE LAB — Simulador del Sistema Inmune</h3><p>App educativa interactiva para explorar el sistema inmunitario, aprender mediante misiones y simular respuestas frente a infecciones.</p><a class="btn btn-ghost" href="https://immune-lab-simulador.koslergroup.chatgpt.site" target="_blank" rel="noopener noreferrer">Abrir aplicación →</a></article></div><div class="cta-row" style="margin-top:30px"><a class="btn btn-primary" href="https://kosler-academy.koslergroup.chatgpt.site/apps">Explorar Kosler Apps →</a></div></div></section>
 <section class="section" id="seedmax">
   <div class="wrap">
-    <span class="eyebrow reveal">04 / SEEDMAX</span>
+    <span class="eyebrow reveal">05 / SEEDMAX</span>
     <h2 class="reveal" data-d="1">SEEDMAX: inteligencia educativa para Latinoamérica</h2>
     <p class="lead reveal" data-d="2">SEEDMAX es una empresa de inteligencia educativa que busca democratizar el aprendizaje personalizado mediante inteligencia artificial, neurociencia, analítica de datos y rutas adaptativas. Su misión es transformar datos educativos en decisiones inteligentes de aprendizaje.</p>
 
     <div class="mv">
-      <article class="card reveal" data-d="1"><span class="ix">Misión</span><h3>Democratizar el aprendizaje personalizado</h3><p>Mediante IA, neurociencia, analítica educativa y rutas adaptativas, llevando la personalización a cada estudiante.</p></article>
-      <article class="card reveal" data-d="2"><span class="ix">Visión</span><h3>Liderar la inteligencia educativa en Latinoamérica</h3><p>Creando soluciones que permitan a estudiantes, docentes e instituciones tomar mejores decisiones de aprendizaje.</p></article>
+      <article class="card reveal" data-d="1"><span class="card-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v7L4 20a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1l-6-10V3M8 15h8"/></svg></span><span class="ix">Misión</span><h3>Democratizar el aprendizaje personalizado</h3><p>Mediante IA, neurociencia, analítica educativa y rutas adaptativas, llevando la personalización a cada estudiante.</p></article>
+      <article class="card reveal" data-d="2"><span class="card-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v7L4 20a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1l-6-10V3M8 15h8"/></svg></span><span class="ix">Visión</span><h3>Liderar la inteligencia educativa en Latinoamérica</h3><p>Creando soluciones que permitan a estudiantes, docentes e instituciones tomar mejores decisiones de aprendizaje.</p></article>
     </div>
 
     <div class="mh reveal" style="margin:54px 0 24px">— Arquitectura del ecosistema</div>
@@ -646,6 +232,7 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
       <div class="arch-row reveal" data-d="2"><span class="lbl">Rómpela PAES</span><p>Primer producto de alto impacto, foco en estudiantes de educación media.</p></div>
       <div class="arch-row reveal" data-d="3"><span class="lbl">NeuVA</span><p>Tecnología transversal de acompañamiento neuroeducativo.</p></div>
       <div class="arch-row reveal" data-d="4"><span class="lbl">3Learn</span><p>Modelo pedagógico diferencial que da criterio a toda la plataforma.</p></div>
+      <div class="arch-row reveal" data-d="5"><span class="lbl">Kosler Academy</span><p>Experiencias de aprendizaje científico profundo impulsadas por el Modelo 3Learn.</p></div>
     </div>
 
     <div class="mh reveal" style="margin:54px 0 6px">— Roadmap</div>
@@ -662,33 +249,33 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
   </div>
 </section>
 
-<!-- ===================== F. RÓMPELA PAES ===================== -->
+<!-- ===================== G. RÓMPELA PAES ===================== -->
 <section class="section feature" id="rompela">
   <div class="wrap">
-    <span class="eyebrow reveal">05 / Rómpela PAES</span>
+    <span class="eyebrow reveal">06 / Rómpela PAES</span>
     <h2 class="reveal" data-d="1">Rómpela PAES: dejar de estudiar a ciegas</h2>
     <p class="lead reveal" data-d="2">Rómpela PAES es el primer producto de SEEDMAX. Nace para ayudar a estudiantes a preparar la PAES con diagnóstico, análisis de errores, rutas personalizadas, acompañamiento inteligente y metodología 3Learn. La promesa central es simple: <strong style="color:var(--cream)">antes de estudiar más, descubre qué estudiar primero.</strong></p>
     <div class="cards-3" style="margin-top:50px">
-      <article class="card reveal" data-d="1"><span class="ix">01</span><h3>Diagnóstico Express PAES</h3><p>Identifica brechas, hábitos, ansiedad y foco de estudio.</p></article>
-      <article class="card reveal" data-d="2"><span class="ix">02</span><h3>Análisis de errores</h3><p>Los errores se transforman en datos para aprender mejor.</p></article>
-      <article class="card reveal" data-d="3"><span class="ix">03</span><h3>Ruta personalizada</h3><p>El estudiante avanza con foco, estrategia y claridad.</p></article>
+      <article class="card reveal" data-d="1"><span class="card-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v7L4 20a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1l-6-10V3M8 15h8"/></svg></span><span class="ix">01</span><h3>Diagnóstico Express PAES</h3><p>Identifica brechas, hábitos, ansiedad y foco de estudio.</p></article>
+      <article class="card reveal" data-d="2"><span class="card-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v7L4 20a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1l-6-10V3M8 15h8"/></svg></span><span class="ix">02</span><h3>Análisis de errores</h3><p>Los errores se transforman en datos para aprender mejor.</p></article>
+      <article class="card reveal" data-d="3"><span class="card-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v7L4 20a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1l-6-10V3M8 15h8"/></svg></span><span class="ix">03</span><h3>Ruta personalizada</h3><p>El estudiante avanza con foco, estrategia y claridad.</p></article>
     </div>
     <div class="cards-3" style="margin-top:22px;grid-template-columns:1fr">
-      <article class="card reveal"><span class="ix">04</span><h3>NeuVA</h3><p>Acompañamiento inteligente para explicar errores y orientar el estudio, con criterio pedagógico y retroalimentación personalizada.</p></article>
+      <article class="card reveal"><span class="card-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v7L4 20a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1l-6-10V3M8 15h8"/></svg></span><span class="ix">04</span><h3>NeuVA</h3><p>Acompañamiento inteligente para explicar errores y orientar el estudio, con criterio pedagógico y retroalimentación personalizada.</p></article>
     </div>
     <div style="margin-top:44px;display:flex;gap:14px;flex-wrap:wrap" class="reveal">
       <a href="https://rompelapaes.cl/" target="_blank" rel="noopener" class="btn btn-primary">Ir a rompelapaes.cl <span class="arr">↗</span></a>
       <a href="https://rompelapaes.com/" target="_blank" rel="noopener" class="btn btn-ghost">Conocer el diagnóstico express</a>
-      <a href="/coaching-paes-ciencias-101" class="btn btn-ghost">Coaching PAES Ciencias 101 <span class="arr">→</span></a>
+      <a href="https://kosler-academy.koslergroup.chatgpt.site/coaching-paes-ciencias-101" class="btn btn-ghost">Coaching PAES Ciencias 101 <span class="arr">→</span></a>
     </div>
   </div>
 </section>
 
-<!-- ===================== G. NEUVA ===================== -->
+<!-- ===================== H. NEUVA ===================== -->
 <section class="section neuva" id="neuva">
   <div class="wrap neuva-grid">
     <div>
-      <span class="eyebrow reveal">06 / NeuVA</span>
+      <span class="eyebrow reveal">07 / NeuVA</span>
       <h2 class="reveal" data-d="1">NeuVA: Neuro Virtual Assistant</h2>
       <p class="lead reveal" data-d="2">NeuVA es un asistente neuroeducativo virtual diseñado para acompañar procesos de aprendizaje, interpretar errores, orientar rutas de estudio y transformar datos educativos en decisiones accionables.</p>
       <p class="reveal" data-d="2" style="margin-top:18px">No se trata de una IA que solo responde preguntas. Su objetivo es acompañar el aprendizaje con criterio pedagógico, análisis de desempeño y retroalimentación personalizada.</p>
@@ -705,10 +292,10 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
   <div class="wrap" style="margin-top:38px"><a href="/neu-va" class="btn btn-primary reveal">Conocer NeuVA <span class="arr">→</span></a></div>
 </section>
 
-<!-- ===================== H. INSIGHTS ===================== -->
+<!-- ===================== I. INSIGHTS ===================== -->
 <section class="section" id="insights">
   <div class="wrap">
-    <span class="eyebrow reveal">07 / Insights</span>
+    <span class="eyebrow reveal">08 / Insights</span>
     <h2 class="reveal" data-d="1">Ideas sobre IA, educación y futuro del aprendizaje</h2>
     <p class="lead reveal" data-d="2">Una selección de reflexiones, artículos y ensayos breves sobre inteligencia artificial educativa, neurociencia, evaluación, aprendizaje personalizado, PAES, liderazgo educativo y transformación digital.</p>
     <div class="posts">
@@ -723,10 +310,10 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
   </div>
 </section>
 
-<!-- ===================== I. CONFERENCIAS ===================== -->
+<!-- ===================== J. CONFERENCIAS ===================== -->
 <section class="section" id="conferencias">
   <div class="wrap">
-    <span class="eyebrow reveal">08 / Conferencias</span>
+    <span class="eyebrow reveal">09 / Conferencias</span>
     <h2 class="reveal" data-d="1">Charlas, asesorías y colaboración estratégica</h2>
     <p class="lead reveal" data-d="2">Disponible para conferencias, entrevistas, asesorías, talleres y colaboración estratégica con colegios, instituciones educativas, equipos directivos, startups EdTech e iniciativas vinculadas a IA educativa.</p>
     <div class="topics">
@@ -743,13 +330,13 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
   </div>
 </section>
 
-<!-- ===================== J. CONTACTO ===================== -->
+<!-- ===================== K. CONTACTO ===================== -->
 <section class="section" id="contacto">
   <div class="wrap contact-grid">
     <div>
-      <span class="eyebrow reveal">09 / Contacto</span>
+      <span class="eyebrow reveal">10 / Contacto</span>
       <h2 class="reveal" data-d="1">Conversemos sobre el futuro de la educación</h2>
-      <p class="lead reveal" data-d="2">Si quieres conversar sobre inteligencia educativa, alianzas, conferencias, SEEDMAX, Rómpela PAES, 3Learn o proyectos de innovación educativa, puedes escribirme a través del formulario.</p>
+      <p class="lead reveal" data-d="2">Si quieres conversar sobre Kosler Academy, inteligencia educativa, alianzas, conferencias, SEEDMAX, Rómpela PAES, 3Learn o proyectos de innovación educativa, puedes escribirme a través del formulario.</p>
     </div>
     <form id="contact-form" class="reveal" data-d="2" action="https://formspree.io/f/mqpzyedw" method="POST" novalidate="">
       <input type="hidden" name="_subject">
@@ -764,6 +351,7 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
           <option>Conferencia o charla</option><option>Asesoría / consultoría</option>
           <option>Alianza estratégica</option><option>Prensa / entrevista</option>
           <option>SEEDMAX</option><option>Rómpela PAES</option>
+          <option>Kosler Academy</option>
           <option>Coaching PAES Ciencias 101</option><option>NeuVA</option>
           <option>Modelo 3Learn</option><option>Implementación institucional</option><option>Otro</option>
         </select>
@@ -788,14 +376,18 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
     </div>
     <div class="foot-col">
       <h5>Ecosistema</h5>
+          <a href="https://kosler-academy.koslergroup.chatgpt.site/academy">Kosler Academy</a>
+          <a href="https://kosler-academy.koslergroup.chatgpt.site/apps">Kosler Apps</a>
+          <a href="https://kosler-academy.koslergroup.chatgpt.site/libros">Kosler Ediciones</a>
           <a href="/#seedmax">SEEDMAX</a>
           <a href="/#treslearn">Modelo 3Learn</a>
       <a href="/#rompela">Rómpela PAES</a>
-      <a href="/coaching-paes-ciencias-101">Coaching PAES Ciencias 101</a>
+      <a href="https://kosler-academy.koslergroup.chatgpt.site/coaching-paes-ciencias-101">Coaching PAES Ciencias 101</a>
       <a href="/neu-va">NeuVA</a>
     </div>
     <div class="foot-col">
       <h5>Conectar</h5>
+      <a class="footer-instagram" href="https://www.instagram.com/kosler.profe/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Profe Kosler: @kosler.profe (abre en una pestaña nueva)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8"/></svg><span>Instagram · @kosler.profe</span></a>
       <a href="https://cl.linkedin.com/in/sebastian-kosler-cruz-05369826" target="_blank" rel="noopener">LinkedIn ↗</a>
       <a href="#insights">Insights</a>
       <a href="#conferencias">Charlas</a>
@@ -919,7 +511,7 @@ form.addEventListener('submit', async (ev) => {
       // nodo
       ctx.beginPath(); ctx.arc(n.x,n.y,n.r,0,Math.PI*2);
       if (n.hot){ ctx.fillStyle='rgba(232,98,42,.95)'; ctx.shadowColor='rgba(232,98,42,.9)'; ctx.shadowBlur=10; }
-      else { ctx.fillStyle='rgba(185,182,174,.55)'; ctx.shadowBlur=0; }
+      else { ctx.fillStyle='rgba(126,133,151,.4)'; ctx.shadowBlur=0; }
       ctx.fill(); ctx.shadowBlur=0;
     }
   }
@@ -1022,4 +614,5 @@ form.addEventListener('submit', async (ev) => {
 
 
 </script>
+<script type="module" src="/neural-backdrop.mjs?v=20261008-hyperbrain-soft"></script>
 </body></html>
