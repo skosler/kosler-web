@@ -200,6 +200,24 @@ header.nav.scrolled{
 .proof strong{display:block;font-family:var(--f-accent);font-size:clamp(1.55rem,3vw,2.15rem);color:var(--amber);line-height:1}
 .proof span{display:block;font-size:.84rem;color:var(--cream-dim);margin-top:10px}
 
+/* =================== TRAYECTORIA INSTITUCIONAL =================== */
+.institution-strip{margin-top:28px;padding:clamp(28px,4vw,46px);border:1px solid var(--line);
+  border-radius:22px;background:linear-gradient(145deg,rgba(15,30,54,.88),rgba(7,15,28,.86));
+  box-shadow:0 24px 60px rgba(0,0,0,.24)}
+.institution-strip-head{display:flex;align-items:end;justify-content:space-between;gap:28px}
+.institution-strip-head .eyebrow{margin-bottom:12px}
+.institution-strip-head h3{max-width:23ch;font-size:clamp(1.45rem,3vw,2.15rem)}
+.institution-logos{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:32px}
+.institution-logo{min-height:150px;padding:20px 14px;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;text-align:center;border:1px solid var(--line);border-radius:15px;
+  background:rgba(7,15,28,.62);color:var(--cream-dim);font-size:.76rem;line-height:1.35;
+  transition:transform .3s var(--ease),border-color .3s,background .3s}
+.institution-logo:hover{transform:translateY(-4px);border-color:rgba(242,153,74,.48);background:rgba(22,41,74,.7)}
+.institution-symbol{display:block;margin-bottom:15px;font-family:var(--f-accent);font-size:1.42rem;
+  line-height:1;font-weight:800;letter-spacing:.1em;color:var(--cream);filter:grayscale(1);opacity:.9}
+.institution-symbol-wide{font-size:1.05rem;letter-spacing:.04em}
+.institution-symbol-cpech{font-size:1.34rem;letter-spacing:-.04em;text-transform:none}
+
 /* =================== 3LEARN =================== */
 .dims{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:54px}
 .dim{border:1px solid var(--line);border-radius:18px;padding:34px 30px;background:var(--navy-700);position:relative}
@@ -312,6 +330,7 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
   .roadmap{grid-template-columns:1fr}.rm{border-right:0;border-bottom:1px solid var(--line)}.rm:last-child{border-bottom:0}
   .steps{grid-template-columns:1fr 1fr;gap:30px}.steps::before{display:none}
   .foot-grid{grid-template-columns:1fr 1fr}
+  .institution-logos{grid-template-columns:repeat(3,1fr)}
 }
 @media(max-width:900px){
   .nav-links{position:fixed;inset:0 0 0 auto;width:min(80vw,320px);background:#070F1C!important;
@@ -326,6 +345,8 @@ footer{border-top:1px solid var(--line);background:var(--navy-900);padding:60px 
   .cards-3,.dims,.posts,.mv,.row2,.steps,.audience-grid,.proof-grid{grid-template-columns:1fr}
   .audience-head{display:block}.audience-head p{margin-top:14px}
   .foot-grid{grid-template-columns:1fr}
+  .institution-strip-head{display:block}.institution-strip-head .btn{margin-top:22px;width:100%;justify-content:center}
+  .institution-logos{grid-template-columns:1fr 1fr}.institution-logo{min-height:132px}
 }
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important;scroll-behavior:auto!important}
