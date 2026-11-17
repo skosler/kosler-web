@@ -181,3 +181,5 @@
   .studio-sample dl div{grid-template-columns:1fr;gap:.2rem}
   .pd-actions :is(.btn,.pd-cta,.pd-outline){max-width:100%;white-space:normal}
 }
+
+#portafolio-docente-360 { scroll-margin-top: 6rem; }
