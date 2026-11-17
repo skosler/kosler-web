@@ -238,3 +238,11 @@
 @media (prefers-reduced-motion:reduce){
   .institution-wordmark,.challenge-card,.capability-card,.format-card{transition:none}
 }
+
+@media (max-width:900px){
+  .institutions-page .section{padding:68px 0!important}
+}
+
+@media (max-width:620px){
+  .institutions-page .section{padding:60px 0!important}
+}
