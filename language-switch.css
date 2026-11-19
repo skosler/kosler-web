@@ -1,0 +1,43 @@
+.kosler-language {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  padding: 2px;
+  border: 1px solid #ede8df40;
+  border-radius: 99px;
+  background: #0b1628;
+  color: #ede8df;
+}
+
+.kosler-language button {
+  min-width: 32px;
+  min-height: 32px;
+  padding: 0 5px;
+  border: 0;
+  border-radius: 99px;
+  background: transparent;
+  color: inherit;
+  font: 600 .75rem/1 system-ui, sans-serif;
+  cursor: pointer;
+}
+
+.kosler-language button[aria-pressed="true"] {
+  background: #f2994a;
+  color: #0b1628;
+}
+
+.kosler-language button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+header.nav .kosler-language {
+  margin-inline-start: 8px;
+  margin-inline-end: 8px;
+}
+
+@media (max-width: 1100px) {
+  header.nav .kosler-language {
+    margin-inline-start: auto;
+  }
+}
